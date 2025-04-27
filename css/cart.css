@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cartHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: 'Montserrat',sans-serif;
+}
+.cartHeader h2{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+}
+.cartHeader h2 a{
+    color: #4a92bb;
+}
+
+.cartProductInfoContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Container to house the table */
+.tableWrapper{
+    position: relative;
+    padding: 20px 40px;
+    min-height: 20vh;
+    flex-grow: 1;
+    /* background-color: #F5F5F5; */
+    overflow-x: auto; /* To make the table scrollable when the window is smaller DON'T TOUCH!! */
+}
+
+/* Table stling */
+table{
+    display: inline-table;
+    border-spacing: 0px 10px;
+    border-collapse: separate; /* This is what separates the table rows*/
+    padding: 20px;
+    min-width: 500px; /* Table scroll bar will appear at this size*/
+    width: 100%;
+}
+
+/* Table row styling */
+tr{
+    padding: 10px;
+}
+tr.productWrapper{
+    background-color: var(--bg-alt);
+    border: 2px solid var(--black);
+}
+/* Th and td styling */
+th, td{
+    border-spacing: 20px;
+    height: inherit;
+    padding: 10px;
+}
+
+
+/* Styling for the table heading */
+th{
+    border-bottom: 2px solid grey;
+    color: grey;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Styling for the table data */
+td{
+    position: relative;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    height: max-content;
+    text-align: center;
+    /* background-color: var(--bg-alt); */
+}
+
+
+/* This is to add border radius to the rows because tr does not support border radius */
+td:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+td:last-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* This is the styling for the little separator lines separating columns */
+td::before{
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    border-radius: 10px;
+    background-color: var(--bg-secondary);
+
+}
+/* Removing the separator line from the last child */
+td:first-child::before{
+    background-color: transparent;
+}
+td:last-child::before{
+    background-color: transparent;
+}
+.cartProductInfo{
+    display: flex;
+    gap: 10px;
+    height: 80px;
+    width: 100%;
+}
+.removeProductBtn{
+    padding: 6px 10px;
+    background-color: transparent;
+}
+.removeProductBtn#empty-cart-button{
+    background-color: var(--error-color);
+    color: var(--white);
+}
+.cartProductImageWrapper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 80px;
+    width: 70px;
+    overflow: hidden;
+}
+
+.cartProductImage{
+    width: calc(100%*1.2);
+}
+
+.cartProductDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+}
+
+.ProductName{
+    text-align: left;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+.productSizeAndStockWrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.productSizeWrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ProductSize{
+    background-color: var(--bg-primary);
+    padding: 0 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.productStockState{
+    color: var(--success-color-2);
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.number-input button, .number-input input{
+    height: 30px;
+    border: none;
+}
+.number-input button{
+    width: 30px;
+    font-size: 16px;
+    background-color: var(--bg-accent)
+}
+.number-input input{
+    width: 40px;
+    font-size: 13px;
+}
+
+/* Filter by category styling */
+.selectBox {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  /* CheckBox Styling */
+  /* Hide the browser's default checkbox */
+  .selectBox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+.checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20px;
+    min-width: 20px;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+    background-color: var(--bg-light);
+    border: 0.1rem solid var(--bg-accent);
+}
+  
+  /* When the checkbox is checked, add a blue background */
+  .selectBox input:checked ~ .checkmark {
+    background-color: var(--black);
+    border: 0.1rem solid var(--black);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .selectBox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .selectBox .checkmark:after {
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg) translate(-1px, -1px);
+}

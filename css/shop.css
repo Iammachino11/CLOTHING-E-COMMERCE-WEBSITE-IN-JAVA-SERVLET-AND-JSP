@@ -1,0 +1,354 @@
+/* 
+    To underline active page 
+    because this index.css file belongs to the home page, and the homepage is the 
+    first index in the nav ul, So this sets the home page and underline it to be active
+*/
+nav.navMenu .navBar ul li:nth-child(2)>a::before{
+    width: 100%;
+}
+/* Fiil up space styling. this is used to fill up the space the nav which has a position of
+fixed occupies through the js */
+.fillupSpace{
+    position: relative;
+}
+
+.product{
+    border: 0.1rem solid var(--bg-accent);
+}
+
+/* shopping Ad container stylign */
+.shoppingAd{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    min-height: 50vh;
+    background-image: url(/images/icons/shop-ad-banner.svg);
+    background-position: center;
+    background-size: cover;
+    padding: 0 40px;
+    overflow: hidden;
+}
+/* Styling for all shopping ad elements except the img
+this is to prevent the img from being on top of the elements */
+.shoppingAdDiscount, .shoppingAdTitle, .shoppingAdButton{
+    position: relative;
+    z-index: 5;
+}
+
+/* Shopping ad discount styling */
+.shoppingAdDiscount{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    padding: 5px 10px;
+    background-color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+}
+/* Shopping ad discount icon */
+.shoppingAdDiscount .svg{
+    width: 20px;
+    color: var(--success-color-2);
+}
+
+/* shoppingAd title/heading */
+.shoppingAd .shoppingAdTitle{
+    width: 600px;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Shopping ad button */
+.shoppingAdButton{
+    width: 150px;
+}
+
+/* shopping ad image */
+.shoppingAdImg{
+    position: absolute;
+    top: -60px;
+    right: 0;
+    width: 450px;
+}
+
+.productsSection{
+    min-height: 10vh;
+}
+
+/* Filter Option Modal */
+.filterOptionsModal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 100vw;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    z-index: 110;
+}
+
+/* filter Option Content */
+.filterOptions{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    transform: translateX(-100%);
+    background-color: var(--white);
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease;
+    z-index: 10;
+}
+/* Class add via js to display the filter options on button click */
+.filterOptions.maximize{
+    width: 300px;
+    transform: translateX(0%);
+}
+
+/* Close Filter Menu Button styling */
+.closeFilterMenu{
+    width: max-content;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-family: 'Noto Sans', monospace;
+    font-weight: bold;
+    align-self: flex-end;
+    background-color: transparent;
+}
+
+/* filterOption header styling */
+.filterOptions>h2{
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
+    min-width: max-content;
+    font-size: 25px;
+    padding: 10px 0;
+    border-bottom: 0.14rem solid var(--bg-accent);
+}
+
+/* filter Categories */
+.filterCategories{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background-color: var(--bg-muted);
+    padding: 10px 20px;
+    border-radius: 5px;
+    min-width: max-content;
+}
+
+/* filter Categories header */
+.filterCategories>h2{
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
+    font-size: 22px;
+    margin-bottom: 10px;
+    min-width: max-content;
+}
+
+/* Filter by category styling */
+.filterCategory {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    min-width: 200px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  /* CheckBox Styling */
+  /* Hide the browser's default checkbox */
+  .filterCategory input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+.checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20px;
+    min-width: 20px;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+    background-color: var(--bg-light);
+    border: 0.1rem solid var(--bg-accent);
+}
+  
+  /* When the checkbox is checked, add a blue background */
+  .filterCategory input:checked ~ .checkmark {
+    background-color: var(--black);
+    border: 0.1rem solid var(--black);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .filterCategory input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .filterCategory .checkmark:after {
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+/* Price Category Container Filter Styling */
+.priceCategoryContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    min-width: max-content;
+
+}
+/* Price Category header */
+.priceCategoryContainer>h2{
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
+}
+
+.priceCategory{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 40px;
+}
+
+.priceCategory input{
+    border: none;
+    outline: none;
+    background-color: var(--bg-light);
+    height: 100%;
+    padding: 0 10px;
+    max-width: 80px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+.priceCategory span{
+    font-family: 'Noto Sans';
+    font-size: 20px;
+}
+
+.priceCategory button{
+    background-color: var(--black);
+    color: var(--white);
+    height: 100%;
+    min-width: 40px;
+    width: 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+@media (max-width:855px) {  
+    .shoppingAd{
+        gap: 20px;
+        background-image: url(/images/icons/shop-ad-banner-mobile.svg);
+        background-position: center;
+        background-size: cover;
+        padding: 0 20px;
+        min-height: 300px;
+    }
+    
+    .shoppingAdDiscount{
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+    
+    .shoppingAdDiscount .svg{
+        width: 18px;
+    }
+    
+    .shoppingAd .shoppingAdTitle{
+        width: 420px;
+        font-size: 28px;
+    }
+    
+    .shoppingAdButton{
+        width: 130px;
+        font-size: 14px;
+    }
+    
+    .shoppingAdImg{
+        position: absolute;
+        top: -60px;
+        right: 0;
+        width: 350px;
+        opacity: 0.8;
+    }
+    
+}
+
+
+@media (max-width:500px) {
+
+    .shoppingAd{
+        gap: 10px;
+        padding: 0 20px;
+        min-height: 200px;
+        width: 95vw;
+        justify-self: center;
+        margin-top: 5px;
+        border-radius: 6px;
+    }
+    
+    .shoppingAdDiscount{
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+    
+    .shoppingAdDiscount .svg{
+        width: 16px;
+    }
+    
+    .shoppingAd .shoppingAdTitle{
+        width: 250px;
+        font-size: 16px;
+    }
+    
+    .shoppingAdButton{
+        width: max-content;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    .shoppingAdImg{
+        position: absolute;
+        top: -60px;
+        right: 0;
+        width: 350px;
+        opacity: 0.8;
+    }
+}

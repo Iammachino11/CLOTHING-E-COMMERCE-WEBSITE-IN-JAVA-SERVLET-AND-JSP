@@ -1,0 +1,732 @@
+/* 
+    To underline active page 
+    because this index.css file belongs to the home page, and the homepage is the 
+    first index in the nav ul, So this sets the home page and underline it to be active
+*/
+nav.navMenu .navBar ul li:nth-child(1)>a::before{
+    width: 100%;
+}
+/* ============================== START OF STYLING FOR THE HERO SECTION ================================= */
+
+/* Styling for the hero section */
+.heroSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    gap: 40px;
+    background-image: url(/images/assets/background-pattern.svg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* heroLeft Styling */
+.heroLeft{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 400px;
+    flex-basis: 65%;
+
+}
+/* Hero Description that contains the h2 and p */
+.heroDescription{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hero description h2 styling */
+.heroLeft .heroDescription h2{
+    position: relative;
+    font-size: 40px;
+    max-width: 350px;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* hero description h2 styling */
+.heroLeft .heroDescription h2::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0px;
+    width: 70%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--bg-primary);
+}
+
+/* hero description p styling */
+.heroLeft .heroDescription p{
+    font-size: 18px;
+    text-align: justify;
+    max-width: 550px;
+    width: 100%;
+}
+
+/* hero call to action buttons container styling */
+.heroCTABtns{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* shop page button styling */
+.heroCTABtns .shopPageBtn{
+    width: 150px;
+}
+/* join us button styling */
+.heroCTABtns .joinUsBtn{
+    display: none;
+    text-align: center;
+    width: 150px;
+}
+
+/* hero right styling */
+.heroRight{
+    flex-basis: 35%;
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* hero right image styling */
+.heroRight img{
+    width: inherit;
+}
+
+/* hero section navigation dots container styling */
+ul.heroDots{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+/* hero section individual navigation dot styling */
+ul.heroDots .heroDot{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: var(--dark-gray);
+}
+/* individual dots before styling. This will be used to know which dot is active */
+.heroDot::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% *0.5);
+    height: calc(100% *0.5);
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.5s ease;
+}
+/* adding the active class to the navigation dot ::before pseudo element */
+.heroDot.active::before{
+    width: calc(100% *2.0);
+    height: calc(100% *2.0);
+    border: 2px solid var(--neutral-black);
+}
+/* adding the active class to the navigation dot */
+ul.heroDots .heroDot.active{
+    background-color: var(--neutral-black);
+}
+/* just styling both hero left and right in this single block of css, this will be used for the transition */
+.heroLeft, .heroRight {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* fade-out class transition to transition the elements out */
+.fade-out {
+    opacity: 0;
+    transform: translateX(-5%);
+}
+/* slide-in transition to transition the elements in */
+.slide-in {
+    opacity: 0;
+    transform: translateX(5%);
+}
+
+/* .slide-in {
+    opacity: 1;
+    transform: translateX(0);
+} */
+/* ============================== END OF STYLING FOR THE HERO SECTION ================================= */
+
+
+
+/* =========================== START OF THE STYLING FOR THE PRODUCT SECTION ============================ */
+/* product section styling */
+.productSection{
+    padding: 40px;
+    background-color: var(--bg-accent);
+}
+
+/* Product Section header styling which contains the header and the categories styling */
+.productsSectionHeader{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+}
+/* Product Header Text Styling */
+.productsSectionHeader h2{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+/* Product Header Side line styling */
+.productsSectionHeader h2::after{
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: var(--black);
+}
+/* Category button to select category styling */
+.topSellingCategory{
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    width: auto;
+    border-radius: 5px;
+    background-color: var(--bg-muted);
+}
+/* This is fill the space to prevent the topSellingCategoryDropDown from closing on hover  */
+.topSellingCategory::before{
+    position: absolute;
+    content: '';
+    bottom: -10px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+/* Categoty button arrow down icon styling */
+.topSellingCategory span{
+    color: var(--neutral-black);
+    font-size: 14px;
+}
+
+/* Category Styling drop down menu styling */
+.topSellingCategoryDropDown{
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    right: 0px;
+    background-color: var(--bg-muted);
+    width: 150px;
+    z-index: 5;
+    border-radius: 6px;
+    box-shadow: 1px 1px 10px rgba(181, 181, 181, 0.3);
+    overflow: hidden;
+}
+/* individual categories */
+.topSellingCategoryDropDown li{
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #00000000;
+    transition: background-color 0.2s linear;
+}
+/* Hover effect */
+.topSellingCategoryDropDown li:hover{
+    background-color: var(--bg-accent);
+}
+/* Hover effect to display the dropdown on hover on the categories icon */
+.topSellingCategory:hover+.topSellingCategoryDropDown,
+.topSellingCategoryDropDown:hover{
+    display: block;
+}
+
+/* =========================== END OF THE STYLING FOR THE PRODUCT SECTION ============================ */
+
+
+/* ================== START OF STYLING FOR THE SCROLLING SLIDE (WHY CHOOSE US) =================== */
+
+main{
+    max-width: 100vw;
+    width: min(100%);
+    margin: auto;
+    padding: 20px 0px;
+    background-color: var(--bg-light);
+}
+.scrollingOrdersSlider{
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000000 10% 90%,
+        transparent
+    );
+}
+.scrollingOrdersSlider .scrollingOrderList{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+.scrollingOrdersSlider .scrollingOrderList .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 20s linear infinite;
+    transition: filter 0.5s;
+    /* animation-delay: calc( (20s / var(--quantity)) * (var(--position) - 1) - 20s) !important; */
+}
+.WhyChooseUs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.whyChooseUsIcon{
+    width: 70px;
+    height: 70px;
+}
+
+.WhyChooseUsInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+.WhyChooseUsInfo h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+.WhyChooseUsInfo p{
+    font-size: 14px;
+}
+
+/* ================== END OF STYLING FOR THE SCROLLING SLIDE (WHY CHOOSE US) =================== */
+
+
+/* ========================== START OF STYLING FOR THE ABOUT PRODUCT SECTION =========================== */
+.aboutProductSection{
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 60px;
+    background-color: var(--white);
+}
+
+.aboutWomenProducts, .aboutMenProducts{
+    position: relative;
+    flex-basis: 45%;
+    flex-grow: 1;
+    background-color: var(--bg-muted);
+    padding: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+.womenProductCount, .menProductCount,
+.aboutWomenProducts h2, .aboutMenProducts h2,
+.aboutWomenProducts p, .aboutMenProducts p,
+.aboutWomenProducts ul, .aboutMenProducts ul{
+    position: relative;
+    z-index: 1;
+}
+.womenProductCount, .menProductCount{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: var(--white);
+}
+.aboutWomenProducts h2, .aboutMenProducts h2{
+    font-family: 'Montserrat', Arial;
+    font-size: 30px;
+    margin-top: 30px;
+}
+.aboutWomenProducts p, .aboutMenProducts p{
+    font-size: 19px;
+    margin-top: 5px;
+    word-wrap: break-word;
+    max-width: 400px;
+    width: 70%;
+}
+
+.aboutWomenProducts ul, .aboutMenProducts ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.aboutWomenProducts ul li, .aboutMenProducts ul li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.aboutWomenProducts ul li::before, .aboutMenProducts ul li::before{
+    content: '';
+    position: relative;
+    height: 3px;
+    width: 10px;
+    background-color: var(--black);
+}
+.aboutWomenProducts img, .aboutMenProducts img{
+    position: absolute;
+    width: calc(100%/1.7) !important;
+    bottom: -15%;
+    right: -15%;
+    z-index:0;
+}
+/* ========================== END OF STYLING FOR THE ABOUT PRODUCT SECTION =========================== */
+
+@keyframes autoRun{
+    from{
+        left: 100%;
+    }to{
+        left: calc(var(--width) * -1);
+    }
+}
+.scrollingOrdersSlider:hover .item{
+    animation-play-state: paused!important;
+    filter: grayscale(1);
+}
+.scrollingOrdersSlider .item:hover{
+    filter: grayscale(0);
+}
+.scrollingOrdersSlider[reverse="true"] .item{
+    animation: reversePlay 10s linear infinite;
+}
+@keyframes reversePlay{
+    from{
+        left: calc(var(--width) * -1);
+    }to{
+        left: 100%;
+    }
+}
+/* ================== END OF STYLING FOR THE SCROLLING SLIDE (WHY CHOOSE US) =================== */
+
+
+@media (max-width:855px) {
+    .heroSection{
+        padding: 20px;
+        gap: 40px;
+        align-items: flex-start;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .heroLeft{
+        flex-basis: 90%;
+        gap: 20px;
+        margin-top: 200px;
+    }
+
+    .heroLeft .heroDescription h2{
+        position: relative;
+        font-size: 35px;
+        max-width: 300px;
+        width: 100%;
+        /* margin-top: 2000px; */
+    }
+
+    .heroLeft .heroDescription p{
+        font-size: 18px;
+        max-width: 550px;
+        width: 100%;
+    }
+
+    .heroCTABtns .shopPageBtn,
+    .heroCTABtns .joinUsBtn{
+        width: auto !important;
+    }
+
+    .heroCTABtns .joinUsBtn{
+        display: block;
+    }
+
+    .heroRight{
+        margin-top: 200px;
+        position: absolute;
+        flex-basis: initial;
+        max-width: 400px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.2;
+    }
+
+    .heroRight img{
+        width: inherit;
+    }
+
+    ul.heroDots{
+        position: absolute;
+        top: 70%;
+        transform: translateY(-70%);
+        right: 30px;
+    }
+    ul.heroDots li{
+        width: 10px;
+        height: 10px;
+        background-color: var(--dark-gray);
+    }
+
+     /* product section styling */
+     .productSection{
+        padding: 30px;
+    }
+
+    /* Product Section header styling which contains the header and the categories styling */
+    .productsSectionHeader{
+        gap: 10px;
+    }
+    /* Product Header Text Styling */
+    .productsSectionHeader h2{
+        font-size: 20px;
+    }
+    /* Product Header Side line styling */
+    .productsSectionHeader h2::after{
+        width: 30px;
+        height: 2px;
+    }
+    /* Category button to select category styling */
+    .topSellingCategory{
+        font-size: 14px;
+        padding: 8px;
+    }
+    /* This is fill the space to prevent the topSellingCategoryDropDown from closing on hover  */
+    .topSellingCategory::before{
+        bottom: -10px;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    /* Categoty button arrow down icon styling */
+    .topSellingCategory span{
+        font-size: 12px;
+    }
+
+    /* Category Styling drop down menu styling */
+    .topSellingCategoryDropDown{
+        top: 40px;
+        right: 0px;
+        width: 140px;
+    }
+    /* individual categories */
+    .topSellingCategoryDropDown li{
+        padding: 8px 16px;
+    }
+    /* Removing the hover by setting the background color to the same as its parent*/
+    .topSellingCategoryDropDown li:hover{
+        background-color: inherit;
+    }
+    /* Hover effect to display the dropdown on hover on the categories icon */
+    .topSellingCategory:hover+.topSellingCategoryDropDown,
+    .topSellingCategoryDropDown:hover{
+        display: block;
+    }
+
+
+    /* ========================== START OF STYLING FOR THE ABOUT PRODUCT SECTION =========================== */
+    .aboutProductSection{
+        gap: 20px;
+        padding: 40px;
+        min-height: 50vh;
+    }
+
+    .aboutWomenProducts, .aboutMenProducts{
+        flex-basis: 40%;
+        min-width: 220px;
+        flex-grow: 1;
+        padding: 25px;
+    }
+    .womenProductCount, .menProductCount{
+        font-size: 16px;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .aboutWomenProducts h2, .aboutMenProducts h2{
+        font-size: 22px;
+    }
+    .aboutWomenProducts p, .aboutMenProducts p{
+        font-size: 15px;
+        max-width: 350px;
+        width: 100%;
+    }
+
+    .aboutWomenProducts ul, .aboutMenProducts ul{
+        gap: 5px;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    .aboutWomenProducts ul li, .aboutMenProducts ul li{
+        gap: 10px;
+    }
+    .aboutWomenProducts ul li::before, .aboutMenProducts ul li::before{
+        content: '';
+        height: 0.1rem;
+        width: 8px;
+    }
+    .aboutWomenProducts img, .aboutMenProducts img{
+        width: calc(100%/1.6);
+        bottom: -40px;
+        right: -40px;
+        opacity: 0.5;
+    }
+    /* ========================== END OF STYLING FOR THE ABOUT PRODUCT SECTION =========================== */
+}
+
+@media (max-width: 500px) {
+    
+    .heroLeft .heroDescription h2{
+        font-size: 30px;
+        max-width: 250px;
+        width: 100%;
+        margin-top: 0px;
+    }
+    .heroLeft .heroDescription p{
+        font-size: 15px;
+        max-width: 550px;
+        width: 100%;
+    }
+    .heroRight{
+        max-width: 300px;
+    }
+    ul.heroDots{
+        position: absolute;
+        top: 80%;
+        transform: translateY(-80%);
+        right: 30px;
+    }
+
+         /* product section styling */
+         .productSection{
+            padding: 20px;
+        }
+    
+        /* Product Section header styling which contains the header and the categories styling */
+        .productsSectionHeader{
+            gap: 10px;
+        }
+        /* Product Header Text Styling */
+        .productsSectionHeader h2{
+            font-size: 18px;
+        }
+        /* Product Header Side line styling */
+        .productsSectionHeader h2::after{
+            content: none;
+        }
+        /* Category button to select category styling */
+        .topSellingCategory{
+            font-size: 13px;
+            padding: 6px;
+        }
+        /* This is fill the space to prevent the topSellingCategoryDropDown from closing on hover  */
+        .topSellingCategory::before{
+            bottom: -10px;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Categoty button arrow down icon styling */
+        .topSellingCategory span{
+            font-size: 10px;
+        }
+    
+        /* individual categories */
+        .topSellingCategoryDropDown li{
+            padding: 8px 14px;
+        }
+        /* Removing the hover by setting the background color to the same as its parent*/
+        .topSellingCategoryDropDown li:hover{
+            background-color: inherit;
+        }
+
+    /* ================== START OF STYLING FOR THE SCROLLING SLIDE (WHY CHOOSE US) =================== */
+    .scrollingOrdersSlider{
+        height: calc(var(--height)*1.3); /*Increasing the height of the slider by multiplying it*/
+    }
+    .scrollingOrdersSlider .scrollingOrderList{
+        min-width: calc(var(--width) * var(--quantity));
+    }
+    .scrollingOrdersSlider .scrollingOrderList .item{
+        width: calc(var(--width)/1.3); /*Reducing the width of the item by dividing it*/
+        height: calc(var(--height)*1.3); /*Increasing the height of the item by multiplying it*/
+    }
+    .WhyChooseUs{
+        gap: 20px;
+    }
+
+    .WhyChooseUsInfo h2{
+        font-size: 16px;
+    }
+    .WhyChooseUsInfo p{
+        text-align: justify;
+    }
+
+    .scrollingOrdersSlider:hover .item{
+        animation-play-state: paused!important;
+        filter: grayscale(1);
+    }
+    .scrollingOrdersSlider .item:hover{
+        filter: grayscale(0);
+    }
+
+
+    .aboutProductSection{
+        padding: 40px 20px;
+        min-height: 50vh;
+    }
+
+    .aboutWomenProducts, .aboutMenProducts{
+        flex-basis: 100%;
+        min-width: initial;
+        padding: 20px;
+    }
+    .womenProductCount, .menProductCount{
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+    .aboutWomenProducts h2, .aboutMenProducts h2{
+        font-size: 18px;
+    }
+    .aboutWomenProducts p, .aboutMenProducts p{
+        font-size: 13px;
+        max-width: initial;
+        width: 100%;
+    }
+
+    .aboutWomenProducts ul li::before, .aboutMenProducts ul li::before{
+        width: 5px;
+    }
+    .aboutWomenProducts img, .aboutMenProducts img{
+        width: calc(100%/1.6);
+    }
+
+}
+
+@media (max-height: 700px){
+    ul.heroDots{
+        position: absolute;
+        top: 95%;
+        transform: translateY(-95%);
+        right: 30px;
+    } 
+}

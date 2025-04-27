@@ -1,0 +1,2038 @@
+/* 
+    Z-INDEX: MAPPING
+    nav.navMenu span.navDiscountAd z-index = 2
+    .addToCartAndWishlistContainer button::before z:index = 10
+    nav.navmenu z-index = 100
+    .productDetailViewModal z-index = 120
+*/
+/* ============================= START OF THE NAV BAR STYLING ================================ */
+/* Nav Bar Styling */
+nav.navMenu{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--white);
+    transition: height 0.5s ease;
+    z-index: 100;
+}
+.joinUsBtn{
+    width: 150px;
+    border-radius: 5px;
+}
+nav.navMenu  .hamMenu{
+    display: none;
+}
+
+/* Nav Span (Discount Ad Menu Styling) */
+nav.navMenu span.navDiscountAd{
+    display: block;
+    gap:5px;
+    background-color: var(--bg-deep-brown);
+    color: var(--sand-color);
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 10px;
+    text-align: center;
+    z-index: 2;
+    word-wrap:break-word;
+    height: 35px;
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+nav.navMenu span.minimized{
+    padding: 0;
+    height: 0;
+}
+nav.navMenu button#close-nav-ad{
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--sand-color);
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    float: right;
+}
+/* Discount Ad menu Styling  */
+nav.navMenu span a{
+    color: var(--honey-gold);
+}
+nav.navMenu span a:hover{
+    text-decoration: underline;
+}
+/* Navigation Bar Styling */
+nav.navMenu .navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 10px 50px;
+    /* box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.3); */
+    height: auto;
+    transition: height 0.5s ease;
+}
+
+/* Nav bar logo container for logo and logo text */
+nav.navMenu .navBar .logoContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Nav Bar links styling */
+nav.navMenu .navBar ul{
+    display: flex;
+    gap: 30px;
+    width: 350px;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+}
+/* Nav bar links styling */
+nav.navMenu .navBar ul li a{
+    position: relative;
+    padding: 10px 15px;
+    transition: 0.3s ease;
+}
+/* This is to know which page is active
+Active page will be added through the page css */
+nav.navMenu .navBar ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--bg-primary);
+}
+/* Hover effect */
+nav.navMenu .navBar ul li a:hover{
+    background-color: var(--bg-alt);
+}
+/* Navbar logo size */
+.navBar .Logo{
+    padding: 10px;
+    width: 80px;
+}
+
+/* Navbar product categories styling */
+.navProductCollection{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 0 0 0 40px;
+    border: 2px solid var(--bg-accent);
+    border-left: none;
+    border-right: none;
+    font-family: 'Poppins', sans-serif;
+}
+/* Product category container */
+.navProductCollection ul{
+    display: flex;
+}
+
+/* Styling to make sure the height of the ul li's are same with the buttons
+and occupy same space because they are in the same container */
+.navProductCollection ul li,
+.filterAndCartButton button{
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    height: 50px;
+}
+
+/* product categories li styling */
+.navProductCollection ul li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s ease;
+}
+/* product categories tect styling  */
+.navProductCollection ul li span{
+    color: inherit;
+}
+
+/* product category icon syling */
+.navProductCollection ul li .svg{
+    display: none;
+    width: 25px;
+}
+
+/* Border right added to the new item category */
+.navProductCollection ul li#new-items{
+    border-right: 0.1rem solid var(--bg-accent);
+}
+
+/* Hover effect for individual categories */
+.navProductCollection ul li:hover{
+    background-color: var(--bg-light);
+}
+
+/* Filter and cart button container */
+.filterAndCartButton{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Styling for both filter and cart button */
+.filterAndCartButton button{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    width: 120px;
+}
+/* Filter and cart button icon */
+.filterAndCartButton button .svg{
+    width: 25px;
+}
+/* Styling the filter button */
+.filterAndCartButton .filterButton{
+    background-color: var(--black);
+    color: var(--white);
+}
+/* Styling the cart item count */
+.filterAndCartButton .cartButton #cart-item-count{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2px;
+    left: 35px;
+    background-color: var(--error-color-2);
+    color: var(--white);
+    height: 22px;
+    width: 22px;
+    font-size: 12px;
+    border-radius: 50%;
+}
+/* ============================= END OF THE NAV BAR STYLING ================================ */
+
+/*======================== START OF THE PRODUCT CONTAINER TO HOUSE THE PRODUCTS ======================= */
+    .productContainer{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    /* Individual products */
+    .product{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-width: 250px;
+        width: 250px;
+        height: 300px;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    /* Discount field styling  */
+    .discountPercentage{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: var(--white);
+        color: var(--error-color-2);
+        font-family: 'Poppins', sans-serif;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-size: 13px;
+    }
+    /* Product image styling */
+    .productImage{
+        width: calc(100%*1.2);
+        height: calc(100%*1.2);
+    }
+    /* Product Info, This container houses all the product information */
+    .productInfo{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        max-height: 90px;
+        height: 90px;
+        padding: 10px;
+        bottom: 0;
+        background-color: var(--white);
+        font-family: 'Poppins';
+    }
+    /* Product Title Styling */
+    .productTitle{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    /* Product Info Bottom Styling which contains order count, star rating and price */
+    .productInfoBottom{
+        display: flex;
+        gap: 5px;
+    }
+
+    /* Product Order and rating container which contains the order and rating */
+    .productOrderAndRating{
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        /* background-color: red; */
+        font-size: 13px;
+    }
+    /* Oder count styling */
+    .productOrderCount{
+        color: var(--dark-gray);
+    }
+    /* Product Rating Styling */
+    .productRating{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--bright-gold);
+        font-family: 'Open Sans',sans-serif;
+    }
+    /* product rating star icon styling */
+    .productRating .starIcon{
+        width: 12px;
+        /* height: 15px; */
+    }
+
+    /* Product price container styling */
+    .productPriceContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-grow: 1;
+        font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        height: auto;
+    }
+    /* Discount price styling */
+    .discountPrice{
+        font-size: 13px;
+        color: var(--dark-gray);
+        text-decoration:line-through;
+    }
+
+    /* Styling the productPrice based on if ther is a discount present */
+    .discountPrice+.productPrice{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    /* product price styling */
+    .productPrice{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    /* add to Cart and wishlist container to house add to cart and wishlist buttons */
+    .addToCartAndWishlistContainer{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Default styling for hte buttons in the add to cart and wishlist container */
+    .addToCartAndWishlistContainer button{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 4px;
+        color: var(--dark-gray);
+        background-color: var(--bg-alt);
+        overflow: hidden;
+    }
+    .addToCartAndWishlistContainer button:nth-child(1){
+        padding: 4px;
+    }
+
+    /* wishlist-icon Styling */
+    #wishlist-icon{
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+    }
+
+    /* Using before pseudo-element ot create a tooltop for the cart and wishlist buttons */
+    .addToCartAndWishlistContainer button::before{
+        position: absolute;
+        pointer-events: none; /* To prevent it from inheriting the hover from its parent*/
+        display: flex;
+        content: '';
+        min-width: 100px;
+        width: fit-content;
+        height: fit-content;
+        top: calc(100%*1.2);
+        right: 0;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 10;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+    /* Hover effect to make the button tooltip visible on hover */
+    .addToCartAndWishlistContainer button:hover::before{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Adding the tooltip text for the Cart button */
+    .addToCartAndWishlistContainer button.addToCartBtn::before{
+        content: 'Add to Cart';
+    }
+    /* Adding he tooltop text for the wishlist button */
+    .addToCartAndWishlistContainer button.addToWishlistBtn::before{
+        content: 'Add to Wishlist';
+    }
+/* =========================== END OF THE STYLING FOR THE PRODUCT SECTION ============================ */
+
+
+/* =========================== START OF THE STYLING FOR THE PRODUCT QUICK VIEW ============================ */
+/* Product View Modal */
+.productDetailViewModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none; /*Flex display will be added from the js*/
+    align-items: center;
+    justify-content: center;
+    max-height: 100vw;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 120;
+}
+
+/* Product View Wrapper, this was added to pad the productDetailView and space it out from the top
+and prevent it from kissing the top on scroll*/
+.productDetailViewWrapper{
+    position: relative;
+    padding: 20px;
+    width: 90%;
+    max-height: 90vh; /*Limiting the height to 90 viewport height*/
+    height: 90vh;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+/* Product Detail View */
+.productDetailView{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto; /*To make the product detail view scrollable*/
+    max-height: 100%;
+    padding-right: 10px;
+}
+/* Close button to close the product detail view modal */
+#close-product-detail-view-btn{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    padding: 0 5px;
+    font-family: 'Noto Sans';
+    background-color: transparent;
+}
+/* Styling product Detail view scrollbar */
+.productDetailView::-webkit-scrollbar {
+    width: 6px;
+}
+/* product detail view scrollbar track styling */
+.productDetailView::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 10px;
+}
+
+/*product detail view scrollbar Slider/Thumb */
+.productDetailView::-webkit-scrollbar-thumb {
+    background: var(--bg-primary); 
+    border-radius: 10px;
+}
+  
+/* Handle on hover */
+.productDetailView::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* Product Detail View Top Styling */
+.productDetailViewTop{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* This contains the Img and Thumb Styling  and is for housing both the product image and thumbnails*/
+.productDetailViewImgAndThumbWrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*Product Image Img Wrapper to wrap the image(the product image is inside this)*/
+.productDetailViewImgWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+    height: 400px;
+    width: 280px;
+    overflow: hidden;
+}
+/* Product image style */
+.productDetailViewImgWrapper img{
+    width: calc(100%*1.1);
+}
+/* Thumbnails container that contains all the thumbnails */
+.productDetailViewThumbnailsContainer{
+    display: flex;
+    gap: 10px;
+    max-width: 280px;
+    width: 100%;
+    overflow-x: auto;
+}
+/* Thumbnail container scrollbar styling */
+.productDetailViewThumbnailsContainer::-webkit-scrollbar {
+    height: 5px;
+}
+/* Thumbnail container track styling*/
+.productDetailViewThumbnailsContainer::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+/* Handle */
+.productDetailViewThumbnailsContainer::-webkit-scrollbar-thumb {
+    background: var(--bg-primary); 
+    border-radius: 10px;
+}
+  
+/* Handle on hover */
+.productDetailViewThumbnailsContainer::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* Product Detatil view Thumnail wrapper to wrap the individual thumbnail images
+(thumbnail images are inside here) */
+.productDetailViewThumbnailWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 63px;
+    width: 63px;
+    height: 87px;
+    overflow: hidden;
+}
+/* To know which image/thumbnail is currently active */
+.productDetailViewThumbnailWrapper.active{
+    border: 0.1rem solid var(--black);
+}
+/* Thumbnail image */
+.productDetailViewThumbnailWrapper img{
+    width: calc(100%*1.1);
+}
+
+/* For the content (text and other) based details */
+.productDetailViewDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* Product name styling */
+.productDetailViewDetails #product-detail-view-product-name{
+    font-family: 'Montserrat', sans-serif;
+    word-wrap: break-word;
+}
+/* Product Detail reviews styling*/
+.productDetailViewReviewsWrapper{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Jost';
+    font-size: 20px;
+}
+
+/* Star icon styling */
+.productDetailViewReviewsWrapper .starIcon{
+    width: 20px;
+    color: var(--gold-accent);
+}
+/* Price info containter/wrapper styling */
+.productDetailViewPriceWrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+}
+/* Price info container content styling */
+.productDetailViewPriceWrapper span{
+    padding: 0 10px;
+}
+/* product price info actual price styling */
+.productDetailViewPriceWrapper #product-detail-view-price{
+    font-weight: bold;
+    border-right: 0.1rem solid var(--dark-gray) ;
+    padding-left: 0;
+}
+/* product price info discount price styling */
+.productDetailViewPriceWrapper #product-detail-view-price-discount{
+    border-right: 0.1rem solid var(--dark-gray) ;
+    text-decoration: line-through;
+    color: var(--neutral-gray);
+}
+/* product price info dicount/percent off styling */
+.productDetailViewPriceWrapper #product-detail-view-percentage-off{
+    color: var(--error-color);
+}
+/* Product view product description styling */
+.productDetailViewDetails #productDetailViewDescription{
+    font-family: 'Poppins', sans-serif;
+    color: var(--neutral-black);
+}
+/* product detail view size wrapper styling(This contains the product size info) */
+.productDetailViewSizeWrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+}
+/* product detail view size styling */
+.productDetailViewSizeWrapper #product-detail-view-size{
+    background-color: var(--bg-accent);
+    padding: 0 12px;
+}
+/* Product detial view in stock styling */
+.productDetailViewDetails #product-detail-view-stock{
+    color: var(--success-color-2);
+    font-family: 'Poppins', sans-serif;
+    margin-top: 15px;
+}
+
+/* product Detail View Purchase Info wrapper which contains quantity and cart */
+.productDetailViewPurchaseInfoWrapper{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Product detail view add to cart button style */
+#product-detail-view-add-to-cart{
+    height: 40px;
+}
+/* Product detail view add to add to wishlist*/
+.productDetailViewPurchaseInfoWrapper .addToWishlistBtn{
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+/* To make the wishlike icon occupy the entire button so if the button is clicked the should mark as wishlist */
+.productDetailViewPurchaseInfoWrapper .addToWishlistBtn #pdv-wishlist-icon{
+    width: 100%;
+    height: 100%;
+}
+
+/* Product Detail View Bottom */
+.productDetailViewBottom{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*productDetailViewOtherInfoTab styling for the tabs  */
+.productDetailViewOtherInfoTab{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    width: 100%;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: var(--dark-gray);
+    border-bottom: 0.15rem solid var(--bg-light);
+}
+
+/* product info tab list (which are the individual tabs to be clicked */
+.productDetailViewOtherInfoTab li{
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: 0.5s ease;
+}
+/* productDetailViewOtherInfoTab ::before psuedoelement. This is added to know which tab is active */
+.productDetailViewOtherInfoTab li::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -3px;
+    height: 4px;
+    width: 0;/*Setting the width initially to 0*/
+    background-color: var(--black);
+    border-radius: 20px;
+    transition: 0.5s ease;
+}
+/* Styling for the productDetailViewOtherInfoTab active class to know which tab is active  */
+.productDetailViewOtherInfoTab li.active{
+    color: var(--black);
+}
+.productDetailViewOtherInfoTab li.active::before{
+    width: 100%;
+}
+
+/*productDetailViewOtherInfoWrapper styling for the more info section  */
+.productDetailViewOtherInfoWrapper{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Fabric and Shipping info Styling */
+.productDetailViewFabric, .productDetailViewShipping{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Fabric and Shipping info h2 Styling */
+.productDetailViewFabric h2, .productDetailViewShipping h2{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Fabric and Shipping info ul Styling */
+.productDetailViewFabric ul, .productDetailViewShipping ul{
+    display: flex;
+    flex-direction: column;    
+    gap: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+/* Fabric and Shipping info li Styling */
+.productDetailViewFabric ul li, .productDetailViewShipping ul li{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    color: var(--dark-gray);
+}
+/* Fabric and Shipping info Details Styling */
+.productDetailViewFabricDetails, .productDetailViewShippingDetails{
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    background-color: var(--bg-light);
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+/*productDetailViewReviewsSection Styling*/
+.productDetailViewReviewsSection{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* productReviewHeader Styling which contains the review text and the write a review button */
+.productReviewHeader{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* productReviewHeader h2 styling */
+.productReviewHeader h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+}
+
+/* productReviewHeader button */
+.productReviewHeader button{
+    width: max-content;
+    border-radius: 5px;
+}
+/* productDetailViewReviewsSection p */
+.productDetailViewReviewsSection p{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* styling for the list that displays the star rating in a progress bar indicator like */
+.productDetailViewReviewSnapshot{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/* this is each rating level li */
+.starRatingLevel{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+/* icon styling */
+.starRatingLevel .svg{
+    width: 20px;
+    color: var(--honey-gold);
+}
+/* review progress bar wrapper */
+.ratingLevelWrapper{
+    position: relative;
+    background-color: var(--bg-accent);
+    width: 50%;
+    height: 12px;
+    border-radius: 20px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+/* To indicate progress percentage */
+.ratingLevel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    --i: 0;
+    width: var(--i); /*content of --i is added dynamically from the js*/
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--honey-gold);
+}
+
+/* customerReviewContainer that contains all reviews and is in a mansory layout type  */
+.customerReviewContainer{
+    column-count: 2; /* number of columns */
+    column-gap: 16px; /* gutter/gap between them */    
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
+}
+
+/* customerReviewWrapper styling which is each customer review info */
+.customerReviewWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 300px;
+    width: 100%;
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: 5px;
+    transition: 0.5s ease;
+    margin-bottom: 16px !important; /*Add bottom space between each elements*/
+    break-inside: avoid;
+}
+/* Customer Review Header styling that contains the customer name and time duration */
+.customerReviewHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+}
+/* Customer name styling */
+.customeruserName{
+    font-weight: bold;
+}
+/* customer Review period styling */
+.customerReviewPeriod{
+    color: var(--dark-gray);
+}
+/* Customer Review styling */
+.customerReview{
+    margin-top: 10px;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        #000000 0 10%,
+        transparent
+    ); /*To add fade out effect at the bottom*/
+    --original-height: 0px;
+    height: 100px;
+    transition: 0.5s ease;
+}
+/* Styling for when the expand class is added */
+.customerReview.expand{
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        #000000 0 100%,
+        transparent
+    );/*Removing the masking fade out effect*/
+    height: var(--original-height) !important;
+}
+/* Customer Review Bottom */
+.customerReviewBottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+/* Star rating wrapper that contains star icon and rating number */
+.starRatingWrapper{
+    display: flex;
+    gap: 5px;
+}
+
+/* starRatingCount */
+.starRatingCount{
+    display: none;/*Hiding the star rating count. This should not be display but is used to generate the star count*/
+}
+
+/* starRatingWrapper starIcon styling */
+.starRatingWrapper .starIcon{
+    width: 20px;
+    color: var(--dark-gray);
+}
+/* starRatingWrapper this is added to the active star rating form the js */
+.starRatingWrapper .starIcon.active {
+    color: var(--honey-gold) !important;
+}
+/*expandCustomerReviewBtn styling. This is to expand customer review  */
+.expandCustomerReviewBtn{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-color: transparent;
+}
+
+/* expandCustomerReviewBtn icon styling  */
+.expandCustomerReviewBtn .svg{
+    width: 100%;
+    transform: rotate(180deg);
+    transition: 0.5s ease;
+}
+
+/* =========================== END OF THE STYLING FOR THE PRODUCT QUICK VIEW ============================ */
+
+
+/* ============================= START OF THE FOOTER STYLING ================================ */
+
+/* Footer styling */
+footer{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+    background-color: var(--black);
+    color: var(--white);
+}
+/* Footer Top content styling  */
+.footerTop{
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Footer about brand container stying which containers brand info like logo, 
+description and social media links */
+.footerAboutBrand{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 400px;
+    font-family: 'Poppins';
+    flex-wrap: wrap;
+}
+/* Footer Logo Styling, this contains both the logo and logo text */
+.footerLogo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: var(--sand-color);
+}
+
+/* footer brand logo styling */
+.footerLogo .Logo{
+    width: 60px;
+}
+/* about brand desctription */
+.footerAboutBrand p{
+    font-size: 16px;
+}
+/* Footer Socials links/icon container Styling */
+.footerSocials{
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+/* Footer socials link styling */
+.footerSocials a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: var(--sand-color);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+/* footer socials icon styling */
+.footerSocials .footerSocialIcon{
+    width: 25px;
+}
+/* Footer top ul styling contains quick links and title*/
+.footerTop ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Poppins', sans-serif;
+    min-width: 200px;
+}
+
+/* footer ul headers/heading styling */
+.footerTop ul .footerLinksTitle{
+    font-size: 16px;
+}
+/* Minmize footer links dropdown icon, this will only be visibe on mobile view */
+.minimizeFooterLinks{
+    display: none;
+}
+/* Styling for the footer quick links */
+.footerTop ul .footerLink{
+    font-size: 15px;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+/* footerTop ul links hover effect */
+.footerTop ul .footerLink:hover{
+    color: var(--sand-color);
+}
+
+/* Footer bottom which contains the copyright styling */
+.footerBottom{
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* ============================= END OF THE FOOTER STYLING ================================ */
+
+
+/* ================================ RESPONSIVE STYLES HERE ======================================== */
+@media (max-width:855px) {
+    /* ============================ START OF THE NAV MENU STYLING ============================== */
+    nav.navMenu .navBar{
+        align-items: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px 40px;
+        padding: 10px 20px;
+    }
+    nav.navMenu .navBar ul{
+        gap: 20px;
+        align-self: center;
+    }
+    nav.navMenu span.minimized{
+        padding: 0 !important;
+        height: 0 !important;
+    }
+    nav.navMenu span.navDiscountAd{
+        height: max-content;
+    }
+    /* Hiding the joinusBtn in the nav */
+    .navItems .joinUsBtn{
+        display: none;
+    }
+
+    .navProductCollection{
+        flex-direction: row;
+        padding: 0 0 0 20px;
+    }
+
+    .navProductCollection ul{
+        display: flex;
+
+    }
+
+    .navProductCollection ul li,
+    .filterAndCartButton button{
+        padding: 10px 20px;
+    }
+
+    .navProductCollection ul li{
+        gap: 5px;
+        transition: none;
+    }
+    /* Hiding the product categories text */
+    .navProductCollection ul li span{
+        color: inherit;
+        display: none;
+    }
+
+    /* Displaying the product category icon to be visible while responsive */
+    .navProductCollection ul li .svg{
+        display: block;
+        width: 25px;
+    }
+
+    /* Adding border right to the new-items */
+    .navProductCollection ul li#new-items{
+        border-right: 0.1rem solid var(--bg-accent);
+    }
+
+    /* removing bg hover effect */
+    .navProductCollection ul li:hover{
+        background-color: transparent;
+    }
+    /* Adding active effect instead to change the color on click/tap */
+    .navProductCollection ul li:active{
+        background-color: var(--bg-light);
+    }
+    /* Filter and car button styling */
+    .filterAndCartButton{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .filterAndCartButton button{
+        gap: 10px;
+        padding: 10px;
+        width: 60px;
+    }
+    .filterAndCartButton button .svg{
+        width: 25px;
+    }
+    /* Repositioning the cart item count */
+    .filterAndCartButton .cartButton #cart-item-count{
+        top: 2px;
+        left: 35px;
+        height: 22px;
+        width: 22px;
+        font-size: 12px;
+    }
+    /* Hiding the filter and cart button text  */
+    .filterAndCartButton span.filterButtonText,
+    .filterAndCartButton span.cartButtonText{
+        display: none;
+    }
+    /* ================================== END OF THE NAV MENU STYLING ============================== */
+
+   
+    /* Product Container to house the products */
+    .productContainer{
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    /* Individual products */
+    .product{
+        min-width: 200px;
+        width: 200px;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    /* Discount field styling  */
+    .discountPercentage{
+        top: 6px;
+        left: 6px;
+        padding: 3px 6px;
+        font-size: 10px;
+    }
+    /* Product image styling */
+    .productImage{
+        width: calc(100%*1.2);
+        height: initial;
+    }
+    /* Product Info, This container houses all the product information */
+    .productInfo{
+        gap: 5px;
+        max-height: 90px;
+        height: 70px;
+        padding: 8px;
+    }
+    /* Product Title Styling */
+    .productTitle{
+        font-size: 12.5px;
+    }
+
+    /* Product Info Bottom Styling which contains order count, star rating and price */
+    .productInfoBottom{
+        display: flex;
+        gap: 5px;
+    }
+
+    /* Product Order and rating container which contains the order and rating */
+    .productOrderAndRating{
+        font-size: 12px;
+    }
+
+    /* Product Rating Styling */
+    .productRating{
+        gap: 5px;
+    }
+    /* product rating star icon styling */
+    .productRating .starIcon{
+        width: 10px;
+    }
+
+    /* Discount price styling */
+    .discountPrice{
+        font-size: 11px;
+    }
+
+    /* Styling the productPrice based on if ther is a discount present */
+    .discountPrice+.productPrice{
+        font-size: 12px;
+    }
+    /* product price styling */
+    .productPrice{
+        font-size: 13px;
+    }
+
+    /* add to Cart and wishlist container to house add to cart and wishlist buttons */
+    .addToCartAndWishlistContainer{
+        gap: 8px;
+        top: 8px;
+        right: 8px;
+    }
+
+    /* Default styling for hte buttons in the add to cart and wishlist container */
+    .addToCartAndWishlistContainer button{
+        width: 25px;
+        height: 25px;
+    }
+    .addToCartAndWishlistContainer button:nth-child(1){
+        padding: 3px;
+    }
+    /* wishlist-icon Styling */
+    #wishlist-icon{
+        padding: 3px;
+    }
+    /* Using before pseudo-element ot create a tooltop for the cart and wishlist buttons */
+    .addToCartAndWishlistContainer button::before{
+        content: none;
+        min-width: initial;
+        top: initial;
+        right: initial;
+    }
+
+    /* Hover effect to make the button tooltip visible on hover */
+    .addToCartAndWishlistContainer button:hover::before{
+        visibility: hidden;
+        opacity: 0;
+    }
+    /* =========================== END OF THE STYLING FOR THE PRODUCT SECTION ============================ */
+
+
+    /* =========================== START OF THE STYLING FOR THE PRODUCT QUICK VIEW ============================ */
+    /* Product View Modal */
+    .productDetailViewModal{
+        max-height: initial;
+        min-height: 100vw;
+    }
+
+    /* Product View Wrapper, this was added to pad the productDetailView and space it out from the top
+    and prevent it from kissing the top on scroll*/
+    .productDetailViewWrapper{
+        width: 100%;
+        max-height: 100vh; /*Limiting the height to 90 viewport height*/
+        height: 100vh;
+        padding: 60px 20px 40px 20px;
+        border-radius: 0;
+    }
+
+    /* Product Detail View */
+    .productDetailView{
+        padding-right: 10px;
+        gap: 50px;
+    }
+    /* Close button to close the product detail view modal */
+    #close-product-detail-view-btn{
+        top: 10px;
+        right: 10px;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    /* Styling product Detail view scrollbar */
+    .productDetailView::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Product Detail View Top Styling */
+    .productDetailViewTop{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        flex-grow: 1;
+        gap: 40px;
+    }
+
+    /* This contains the Img and Thumb Styling  and is for housing both the product image and thumbnails*/
+    .productDetailViewImgAndThumbWrapper{
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    /*Product Image Img Wrapper to wrap the image(the product image is inside this)*/
+    .productDetailViewImgWrapper{
+        min-width: 250px;
+        height: 400px;
+        width: 280px;
+    }
+    /* Product image style */
+    .productDetailViewImgWrapper img{
+        width: calc(100%*1.1);
+    }
+    /* Thumbnails container that contains all the thumbnails */
+    .productDetailViewThumbnailsContainer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 100px;
+        height: max-content;
+        overflow-x: initial;
+    }
+
+    /* Product Detatil view Thumnail wrapper to wrap the individual thumbnail images
+    (thumbnail images are inside here) */
+    .productDetailViewThumbnailWrapper{
+        min-width: 63px;
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+    }
+    /* Thumbnail image */
+    .productDetailViewThumbnailWrapper img{
+        width: calc(100%*1.1);
+    }
+
+    /* For the content (text and other) based details */
+    .productDetailViewDetails{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    /* Product name styling */
+    .productDetailViewDetails #product-detail-view-product-name{
+        word-wrap: break-word;
+    }
+    /* Product Detail reviews styling*/
+    .productDetailViewReviewsWrapper{
+        gap: 5px;
+        font-size: 20px;
+    }
+
+    /* Star icon styling */
+    .productDetailViewReviewsWrapper .starIcon{
+        width: 20px;
+    }
+    /* Price info containter/wrapper styling */
+    .productDetailViewPriceWrapper{
+        font-size: 20px;
+    }
+    /* Price info container content styling */
+    .productDetailViewPriceWrapper span{
+        padding: 0 10px;
+    }
+    /* product price info actual price styling */
+    .productDetailViewPriceWrapper #product-detail-view-price{
+        font-weight: bold;
+        border-right: 0.1rem solid var(--dark-gray) ;
+        padding-left: 0;
+    }
+    /* product price info discount price styling */
+    .productDetailViewPriceWrapper #product-detail-view-price-discount{
+        border-right: 0.1rem solid var(--dark-gray) ;
+    }
+    /* Product view product description styling */
+    .productDetailViewDetails #productDetailViewDescription{
+        width: 100%;
+    }
+    /* product detail view size wrapper styling(This contains the product size info) */
+    .productDetailViewSizeWrapper{
+        gap: 10px;
+        font-size: 20px;
+    }
+    /* product detail view size styling */
+    .productDetailViewSizeWrapper #product-detail-view-size{
+        padding: 0 12px;
+    }
+    /* Product detial view in stock styling */
+    .productDetailViewDetails #product-detail-view-stock{
+        margin-top: 10px;
+    }
+
+    /* product Detail View Purchase Info wrapper which contains quantity and cart */
+    .productDetailViewPurchaseInfoWrapper{
+        gap: 10px;
+    }
+
+    /* Product detail view add to cart button style */
+    #product-detail-view-add-to-cart{
+        height: 40px;
+        padding: 0 10px;
+        width: max-content;
+    }
+    /* Product detail view add to add to wishlist*/
+    .productDetailViewPurchaseInfoWrapper .addToWishlistBtn{
+        border-radius: 5px;
+    }
+
+    /* Product Detail View Bottom */
+    .productDetailViewBottom{
+        gap: 20px;
+    }
+
+    /*productDetailViewOtherInfoTab styling for the tabs  */
+    .productDetailViewOtherInfoTab{
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    /* product info tab list (which are the individual tabs to be clicked */
+    .productDetailViewOtherInfoTab li{
+        height: 100%;
+    }
+    /* productDetailViewOtherInfoTab ::before psuedoelement. This is added to know which tab is active */
+    .productDetailViewOtherInfoTab li::before{
+        left: 0;
+        bottom: -3px;
+    }
+
+    /*productDetailViewOtherInfoWrapper styling for the more info section  */
+    .productDetailViewOtherInfoWrapper{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 30px;
+    }
+
+    /* Fabric and Shipping info Styling */
+    .productDetailViewFabric, .productDetailViewShipping{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Fabric and Shipping info h2 Styling */
+    .productDetailViewFabric h2, .productDetailViewShipping h2{
+        font-size: 20px;
+    }
+
+    /* Fabric and Shipping info ul Styling */
+    .productDetailViewFabric ul, .productDetailViewShipping ul{
+        gap: 20px;
+    }
+    /* Fabric and Shipping info li Styling */
+    .productDetailViewFabric ul li, .productDetailViewShipping ul li{
+        gap: 10px 20px;
+    }
+    /* Fabric and Shipping info Details Styling */
+    .productDetailViewFabricDetails, .productDetailViewShippingDetails{
+        padding: 0 10px;
+    }
+
+    /*productDetailViewReviewsSection Styling*/
+    .productDetailViewReviewsSection{
+        gap: 20px;
+        padding: 10px;
+    }
+
+    /* productReviewHeader Styling which contains the review text and the write a review button */
+    .productReviewHeader{
+        flex-wrap: wrap;
+        gap: 10px 40px;
+        padding: 0;
+    }
+
+    /* productReviewHeader h2 styling */
+    .productReviewHeader h2{
+        font-size: 25px;
+    }
+
+    /* productReviewHeader button */
+    .productReviewHeader button{
+        width: max-content;
+    }
+    /* styling for the list that displays the star rating in a progress bar indicator like */
+    .productDetailViewReviewSnapshot{
+        gap: 15px;
+    }
+    /* this is each rating level li */
+    .starRatingLevel{
+        gap: 10px;
+    }
+    /* icon styling */
+    .starRatingLevel .svg{
+        width: 18px;
+    }
+    /* review progress bar wrapper */
+    .ratingLevelWrapper{
+        height: 10px;
+    }
+
+    /* customerReviewContainer that contains all reviews and is in a mansory layout type  */
+    .customerReviewContainer{
+        column-count: 1; /* number of columns */
+        margin-top: 20px;
+    }
+
+    /* customerReviewWrapper styling which is each customer review info */
+    .customerReviewWrapper{
+        min-width: 200px;
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 25px !important; /*Add bottom space between each elements*/
+    }
+    /* Customer Review Header styling that contains the customer name and time duration */
+    .customerReviewHeader{
+        flex-wrap: wrap;
+        gap: 5px 30px;
+    }
+
+
+    /* Star rating wrapper that contains star icon and rating number */
+    .starRatingWrapper{
+        display: flex;
+        gap: 5px;
+    }
+
+/* =========================== END OF THE STYLING FOR THE PRODUCT QUICK VIEW ============================ */
+
+    /* =============================== START OF THE FOOTER STYLING =================================== */
+    footer{
+        gap: 30px;
+        padding: 40px 20px;
+    }
+    .footerTop{
+        gap: 40px 20px;
+    }
+    
+    .footerAboutBrand{
+        gap: 40px 30px;
+        width: 100%;
+    }
+    
+    .footerLogo .Logo{
+        width: 50px;
+    }
+    .footerAboutBrand p{
+        font-size: 14px;
+    }
+    
+    .footerSocials{
+        gap: 20px;
+    }
+    
+    .footerSocials a{
+        padding: 6px;
+        border-radius: 50%;
+    }
+    .footerSocials .footerSocialIcon{
+        width: 20px;
+    }
+    /* Styling the ul and resizing it */
+    .footerTop ul{
+        gap: 30px;
+        min-width: 100px;
+        max-width: 220px;
+        height: 40px;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    /* This class will be added when the maximizeFooterLinks button is clicked to maximize the footer */
+    .footerTop ul.maximized{
+        height: 250px;
+    }
+
+    .footerTop ul .footerLinksTitle{
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        font-size: 14px;
+    }
+    /* This is the button to maximize the footer to view it's content */
+    .maximizeFooterLinks{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        font-family: Arial;
+        font-size: 20px;
+        color: var(--white);
+        background-color: transparent;
+    }
+
+    /* This is the drop down icon */
+    .maximizeFooterLinks .svg{
+        width: 15px;
+    }
+    .footerTop ul .footerLink{
+        font-size: 14px;
+        color: var(--white);
+        transition: color 0.3s ease;
+    }
+    .footerTop ul .footerLink:hover{
+        color: var(--sand-color);
+    }
+    
+    .footerBottom{
+        text-align: center;
+        font-family: 13px;
+    }
+    /* =================================== END OF THE FOOTER STYLING ================================ */
+}
+
+@media (max-width: 500px){
+    /* ================================== START OF THE FOOTER STYLING ================================== */
+    nav.navMenu .navBar ul{
+        gap: 10px;
+        width: 300px;
+    }
+    nav.navMenu .navBar .logoContainer{
+        letter-spacing: 0.25px;
+        font-size: 13px;
+    }
+
+    .navBar .Logo{
+        padding: 10px;
+        width: 50px;
+    }
+
+    /* Styling the navProductCollection at 500px and changing the structure */
+    .navProductCollection{
+        flex-direction: column;
+        border: none;
+        padding: 0;
+        gap: 0;
+    }
+    
+    .navProductCollection ul{
+        justify-content: center;
+        /* border: 0.1rem solid var(--bg-accent); */
+        width: 100%;
+        background-color: var(--bg-light);
+    }
+    /* Restyling both the navProductCollection ul li and buttons */
+    .navProductCollection ul li,
+    .filterAndCartButton button{
+        padding: 10px 20px;
+    }
+
+    .navProductCollection ul li{
+        gap: 5px;
+    }
+
+    .navProductCollection ul li svg{
+        width: 25px;
+    }
+    /* Removing the border right from the new-item */
+    .navProductCollection ul li#new-items{
+        border-right: none;
+    }
+
+    .navProductCollection ul li:active{
+        background-color: var(--bg-light);
+    }
+    /* Restyling the filter and cart button container */
+    .filterAndCartButton{
+        padding: 5px;
+        gap: 10px;
+        align-self: flex-end;
+        justify-content: right;
+        width: 100%;
+    }
+
+    /* restyling the both the filer and cart buttons in the filterAndCartButton container*/
+    .filterAndCartButton button{
+        gap: 10px;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+    }
+    /* Changing the filter and cart button icon size */
+    .filterAndCartButton button .svg{
+        width: 25px;
+    }
+    /* Restyling the cart item count */
+    .filterAndCartButton .cartButton #cart-item-count{
+        top: -5px;
+        left: 20px;
+        height: 22px;
+        width: 22px;
+    }
+
+    .filterAndCartButton span.filterButtonText{
+        display: none;
+    }
+    /* =============================== END OF THE FOOTER STYLING ==================================== */
+
+    /* ============================== START OF THE PRODUCT SECTION STYLING ===================================== */
+    /* Product Container to house the products */
+    .productContainer{
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    /* Individual products */
+    .product{
+        min-width: 150px;
+        width: 150px;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    /* Product image styling */
+    .productImage{
+        width: calc(100%*1.5);
+        height: initial;
+    }
+    /* Product Info, This container houses all the product information */
+    .productInfo{
+        gap: 5px;
+        max-height: 90px;
+        height: 70px;
+        padding: 8px;
+    }
+    /* Product Title Styling */
+    .productTitle{
+        font-size: 11px;
+    }
+
+    /* Product Info Bottom Styling which contains order count, star rating and price */
+    .productInfoBottom{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Product Order and rating container which contains the order and rating */
+    .productOrderAndRating{
+        font-size: 10px;
+        gap: 5px;
+        flex-direction: row;
+    }
+    .productOrderCount{
+        border-right: 1px solid var(--dark-gray);
+        padding-right: 4px;
+    }
+    /* Product Rating Styling */
+    .productRating{
+        gap: 3px;
+        align-items: center;
+    }
+    /* product rating star icon styling */
+    .productRating .starIcon{
+        width: 8px;
+    }
+
+    .productPriceContainer{
+        justify-content: space-between;
+        gap: 5px;
+        flex-direction: row;
+    }
+
+    /* Discount price styling */
+    .discountPrice{
+        font-size: 8px;
+    }
+
+    /* Styling the productPrice based on if ther is a discount present */
+    .discountPrice+.productPrice{
+        font-size: 11px;
+    }
+    /* product price styling */
+    .productPrice{
+        font-size: 11px;
+    }
+
+    /* add to Cart and wishlist container to house add to cart and wishlist buttons */
+    .addToCartAndWishlistContainer{
+        gap: 8px;
+        top: 8px;
+        right: 8px;
+    }
+
+    /* Default styling for hte buttons in the add to cart and wishlist container */
+    .addToCartAndWishlistContainer button{
+        width: 25px;
+        height: 25px;
+    }
+    .addToCartAndWishlistContainer button:nth-child(1){
+        padding: 3px;
+    }
+    /* wishlist-icon Styling */
+    #wishlist-icon{
+        padding: 3px;
+    }
+
+    /* Using before pseudo-element ot create a tooltop for the cart and wishlist buttons */
+    .addToCartAndWishlistContainer button::before{
+        content: none;
+        min-width: initial;
+        top: initial;
+        right: initial;
+    }
+
+    /* Hover effect to make the button tooltip visible on hover */
+    .addToCartAndWishlistContainer button:hover::before{
+        visibility: hidden;
+        opacity: 0;
+    }
+    /* ============================== END OF THE PRODUCT STYLING ==================================== */
+
+   
+    /* =========================== START OF THE STYLING FOR THE PRODUCT QUICK VIEW ============================ */
+    /* Product View Modal */
+    .productDetailViewModal{
+        max-height: initial;
+        min-height: 100vw;
+        background-color: white;
+    }
+
+    /* Product View Wrapper, this was added to pad the productDetailView and space it out from the top
+    and prevent it from kissing the top on scroll*/
+    .productDetailViewWrapper{
+        border-radius: 0;
+        padding: 0;
+        background-color: var(--white);
+    }
+
+    /* Product Detail View */
+    .productDetailView{
+        gap: 0;
+        padding: 0;
+        width: 100%;
+        max-height: 100vh;
+    }
+    /* Close button to close the product detail view modal */
+    #close-product-detail-view-btn{
+        top: 20px;
+        right: 10px;
+        z-index: 120;
+        padding: 5px 10px;
+        border-radius: 6px;
+        background-color: rgba(212, 212, 212, 0.5);
+        backdrop-filter: blur(5px);
+    }
+    /* Styling product Detail view scrollbar */
+    .productDetailView::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Product Detail View Top Styling */
+    .productDetailViewTop{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-grow: 1;
+        gap: 0;
+        background-color: var(--white);
+    }
+
+    /* This contains the Img and Thumb Styling  and is for housing both the product image and thumbnails*/
+    .productDetailViewImgAndThumbWrapper{
+        position: sticky;
+        max-width: 100vw;
+        width: 100%;
+        gap: 10px;
+        top: 0;
+        left: 0;
+    }
+
+    /*Product Image Img Wrapper to wrap the image(the product image is inside this)*/
+    .productDetailViewImgWrapper{
+        min-width: 250px;
+        align-items: flex-start;
+        flex-grow: 1;
+        height: 500px;
+        width: 100vw;
+    }
+    /* Product image style */
+    .productDetailViewImgWrapper img{
+        width: calc(100%*1.1);
+    }
+    /* Thumbnails container that contains all the thumbnails */
+    .productDetailViewThumbnailsContainer{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    /* Product Detatil view Thumnail wrapper to wrap the individual thumbnail images
+    (thumbnail images are inside here) */
+    .productDetailViewThumbnailWrapper{
+        position: relative;
+        box-shadow: 1px 1px 5px rgba(113, 113, 113, 0.2);
+        /* border: 0.1rem solid #0000002e; */
+    }
+    /* Thumbnail image */
+    .productDetailViewThumbnailWrapper img{
+        width: calc(100%*1.1);
+    }
+
+    /* For the content (text and other) based details */
+    .productDetailViewDetails{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 40px 20px;
+        z-index: 2;
+        background-color: var(--white);
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        margin-top: -40px;
+    }
+    /* Product name styling */
+    .productDetailViewDetails #product-detail-view-product-name{
+        font-size: 22px;
+        word-wrap: break-word;
+    }
+    /* Product Detail reviews styling*/
+    .productDetailViewReviewsWrapper{
+        gap: 5px;
+        font-size: 18px;
+    }
+
+    /* Star icon styling */
+    .productDetailViewReviewsWrapper .starIcon{
+        width: 18px;
+    }
+    /* Price info containter/wrapper styling */
+    .productDetailViewPriceWrapper{
+        font-size: 18px;
+        gap: 5px 10px;
+        align-items: center;
+        /* flex-wrap: wrap; */
+    }
+    /* Price info container content styling */
+    .productDetailViewPriceWrapper span{
+        padding: 0;
+    }
+    /* product price info actual price styling */
+    .productDetailViewPriceWrapper #product-detail-view-price{
+        width: 100%;
+        border-right: initial;
+        order: 1;
+        font-size: 20px;
+    }
+    /* product price info discount price styling */
+    .productDetailViewPriceWrapper #product-detail-view-price-discount{
+        border-right: initial;
+    }
+    /* Product view product description styling */
+    .productDetailViewDetails #productDetailViewDescription{
+        width: 100%;
+    }
+    /* product detail view size wrapper styling(This contains the product size info) */
+    .productDetailViewSizeWrapper{
+        font-size: 18px;
+    }
+
+    /* product Detail View Purchase Info wrapper which contains quantity and cart */
+    .productDetailViewPurchaseInfoWrapper{
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    /* Product detail view add to cart button style */
+    #product-detail-view-add-to-cart{
+        height: 40px;
+        padding: 0 10px;
+        width: 100%;
+        order: 1;
+    }
+    /* Product detail view add to add to wishlist*/
+    .productDetailViewPurchaseInfoWrapper .addToWishlistBtn{
+        top: 0;
+        border-radius: 5px;
+    }
+
+    /* Product Detail View Bottom */
+    .productDetailViewBottom{
+        gap: 20px;
+        padding: 0 20px;
+        background-color: var(--white);
+    }
+
+    /* productReviewHeader h2 styling */
+    .productReviewHeader h2{
+        font-size: 20px;
+    }
+
+    /* productReviewHeader button */
+    .productReviewHeader button{
+        width: max-content;
+        height: 40px;
+    }
+
+    /* customerReviewWrapper styling which is each customer review info */
+    .customerReviewWrapper{
+        gap: 0;
+        min-width: 200px;
+        padding: 0;
+        margin-bottom: 35px !important; /*Add bottom space between each elements*/
+    }
+/* =========================== END OF THE STYLING FOR THE PRODUCT QUICK VIEW ============================
+
+    /* ============================== START OF THE FOOTER STYLING ===================================== */
+    footer{
+        gap: 30px;
+        padding: 20px;
+    }
+    /* Restyling the footer top with minimal change in structure */
+    .footerTop{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footerAboutBrand{
+        gap: 20px;
+        width: 100%;
+    }
+    .footerAboutBrand{
+        margin-bottom: 20px;
+    }
+    .footerTop ul{
+        align-items: center;
+        max-width: 100vw;
+        width: 100%;
+    }
+    .footerTop ul .footerLinksTitle{
+        justify-content: space-between;
+        width: 200px;
+    }
+    /* ================================== END OF TH FOOTER STYLING ============================================= */
+    
+}

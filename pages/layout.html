@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .masonry {
+        column-count: 2;        /* number of “columns” */
+        column-gap: 16px;       /* gutter between them */
+      }
+      .item {
+        /* force each .item to stay intact in a column */
+        break-inside: avoid;
+        display: inline-block;  /* so width:100% fits the column */
+        width: 100%;
+        margin-bottom: 16px;    /* vertical gutter */
+      }
+
+
+    </style>
+</head>
+<body>
+  <div class="masonry">
+    <div class="item" style="background-color: red; height: 100px;">…</div>
+    <div class="item" style="background-color: aqua; height: 200px;">…</div>
+    <div class="item" style="background-color: dodgerblue; height: 80px;">…</div>
+    <div class="item" style="background-color: gold; height: 150px;">…</div>
+    <div class="item" style="background-color: greenyellow; height: 60px;">…</div>
+    <div class="item" style="background-color: purple; height: 120px;">…</div>
+    <!-- etc -->
+  </div>
+  
+      
+</body>
+</html>

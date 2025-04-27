@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoraHert- Purchase Clothes of Different Categories</title>
+    <link rel="icon" href="images/icons/favicon.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- navigation menu -->
+    <nav class="navMenu">
+        <!-- Discount ad here -->
+        <span class="navDiscountAd">Sign up and GET A DISCOUNT OFF for your first Order <a href="#">Sign up now</a> 
+            <button id="close-nav-ad">✕</button>
+        </span>
+
+        <!-- Nav bar to display logo, links etc -->
+        <div class="navBar">
+            <!-- Logo container to store the logo -->
+            <div class="logoContainer">
+                <img src="images/icons/logo-colored.svg" alt="" class="Logo">
+                <h2>CoraHert</h2>
+            </div>
+
+            <!-- navLinks -->
+            <ul>
+                <li><a href="/Index.html"class="navLinks">Home</a></li>
+                <li><a href="/pages/shop.html" class="navLinks">Shop</a></li>
+                <li><a href="" class="navLinks">About Us</a></li>
+            </ul>
+            <!-- Nav Item for CTA buttons and other content like to display user info, cart on login -->
+            <div class="navItems">
+                <a href="" class="joinUsBtn buttonStyle2">Join Us</a>
+                
+            </div>
+            
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="heroSection">
+        <!-- Hero left for the content on the left: heading, description and CTA buttons -->
+        <div class="heroLeft">
+            <!-- Hero description container -->
+            <div class="heroDescription">
+                <h2 id="hero-left-title"></h2><!--Title/Header are added here dynamically-->
+                <p id="hero-left-description"></p><!--Descriptions are added here dynamically-->
+            </div>
+            <!-- CTA buttons -->
+            <div class="heroCTABtns">
+                <!-- This button is visible both on desktop and mobile -->
+                <a class="shopPageBtn buttonStyle1"><span>Shop Now</span></a>
+                <!-- This button is only visible on mobile -->
+                <a class="joinUsBtn buttonStyle2">Join Us</a>
+            </div>
+        </div>
+        <!-- Hero right -->
+        <div class="heroRight">
+            <img src="" alt="" class="slide-1" id="hero-right-img"> <!--Image link/src are added here dynamically-->
+        </div>
+        <!-- Hero dots to navigate between slides -->
+        <ul class="heroDots">
+            <!-- HeroDot (<li>) are added here dynamically based on the number of the slides -->
+        </ul>
+    </section>
+
+    <!-- product section -->
+    <section class="productSection">
+        <!-- Product section header -->
+        <div class="productsSectionHeader">
+            <!-- Header Title for the product section -->
+            <h2 id="product-metric">Top Selling Products</h2>
+            <!-- Category Button to display product category selection -->
+            <button class="topSellingCategory" id="top-selling-category">Category <span>▼</span></button>
+            <!-- product Category List -->
+            <ul class="topSellingCategoryDropDown">
+                <li id="male-category">Male</li>
+                <li id="female-catogory">Female</li>
+                <li id="kids-category">Kids</li>
+            </ul>
+        </div>
+        <!-- Product Container where all the products are stored -->
+        <div class="productContainer">
+            <!-- individual product -->
+            <div class="product">
+                <!-- Discount percentage of the product -->
+                <div class="discountPercentage" id="discount-percentage">Save 20%</div>
+                <!-- Container housing the add to cart and wishlist buttons -->
+                <div class="addToCartAndWishlistContainer">
+                    <!-- Add to cart button -->
+                    <button class="addToCartBtn" id="add-to-Cart-btn">
+                        <img src="images/icons/add-to-cart-icon.svg" alt="" class="svg">
+                    </button>
+                    <!-- Add to wishlist button -->
+                    <button class="addToWishlistBtn" id="add-to-wishlist-btn">
+                        <i class="like-icon-container" data-animation="circle" id="wishlist-icon"></i>
+                    </button>
+                </div>
+
+                <!-- product image -->
+                <img src="images/temp/image-1.jpg" alt="" class="productImage" id="product-image">
+                <!-- Product info -->
+                <div class="productInfo">
+                    <!-- ProductName/Title -->
+                    <span class="productTitle" id="product-name">Modern Colored Dress</span>
+                    <!-- Items below the product name -->
+                    <div class="productInfoBottom">
+                        <!-- To house the Order count and product rating -->
+                        <div class="productOrderAndRating">
+                            <!-- Product order count -->
+                            <span class="productOrderCount" id="product-order-count">500+ Orders</span>
+                            <!-- Product  Rating -->
+                            <span class="productRating" id="product-rating">
+                                <img src="images/icons/star-icon.svg" alt="" class="svg starIcon"> 4.9
+                            </span>
+                        </div>
+                        <!-- Product price -->
+                        <div class="productPriceContainer">
+                            <!-- Discount price -->
+                            <div class="discountPrice" id="discount-price"> ₦ 30,000.00 </div>
+                            <!-- current price -->
+                            <div class="productPrice" id="product-price">₦ 24,000.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Individual product -->
+            <div class="product">
+                <div class="addToCartAndWishlistContainer">
+                    <button class="addToCartBtn">
+                        <img src="images/icons/add-to-cart-icon.svg" alt="" class="svg">
+                    </button>
+                    <button class="addToWishlistBtn" id="add-to-wishlist-btn">
+                        <i class="like-icon-container" data-animation="circle" id="wishlist-icon"></i>
+                    </button>
+                </div>
+                <img src="images/temp/image-2.jpg" alt="" class="productImage">
+                <div class="productInfo">
+                    <span class="productTitle" id="product-title">Classy Light Jacket</span>
+                    <div class="productInfoBottom">
+                        <div class="productOrderAndRating">
+                            <span class="productOrderCount" id="product-order-count">300+ Orders</span>
+                            <span class="productRating" id="product-rating">
+                                <img src="images/icons/star-icon.svg" alt="" class="svg starIcon"> 4.6
+                            </span>
+                        </div>
+                        <div class="productPriceContainer">
+                            <div class="productPrice" id="product-price">₦ 15,000.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+     <!-- =============== START OF THE SCROLLING SLIDE ===================== -->
+     <main>
+        <div class="scrollingOrdersSlider" style="
+            --width: 500px;
+            --height: 100px;
+        ">
+            <div class="scrollingOrderList" id="orders">
+                <!-- ITEMS ARE ADDED HERE DYNAMICALLY  -->
+            </div>
+        </div>
+    </main>
+    <!-- =============== END OF THE SCROLLING SLIDE ===================== -->
+
+    <!-- =============== START OF THE ABOUT PRODUCT SECTION ===================== -->
+    <!-- About Product Section -->
+    <section class="aboutProductSection">
+        <!-- Womens Product info -->
+        <div class="aboutWomenProducts">
+            <!-- Women products count -->
+            <span class="womenProductCount" id="women-product-count">2000+ Items</span>
+            <h2>For Women</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <!-- Women products list -->
+            <ul class="womenProductsList" id="women-product-list">
+                <li>Blazer</li>
+                <li>T-shirt</li>
+                <li>Blouse</li>
+                <li>Dresses</li>
+                <li>Jeans</li>
+                <li>Coats</li>
+                <li>Knits</li>
+            </ul>
+            <img src="images/assets/about-women-product-img.png" alt="woman in white dress">
+        </div>
+        <!-- Men product info -->
+        <div class="aboutMenProducts">
+            <!-- Men product count -->
+            <span class="menProductCount" id="men-product-count">1500+ Items</span>
+            <h2>For Men</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <!-- Men product list -->
+            <ul class="menProductsList" id="men-product-list">
+                <li>Blazer</li>
+                <li>T-shirt</li>
+                <li>Jeans</li>
+                <li>Coats</li>
+            </ul>
+            <img src="images/assets/about-men-product-img.png" alt="men holding wrist in simple dress">
+        </div>
+    </section>
+    <!-- =============== END OF THE ABOUT PRODUCT SECTION ===================== -->
+
+    <!-- Footer  -->
+    <footer>
+        <!-- Content at the top section of the footer -->
+        <div class="footerTop">
+            <!-- Footer About brand which contains brand logo, short about, and social media links -->
+            <div class="footerAboutBrand">
+                <!-- foooter brand logo -->
+                <span class="footerLogo">
+                    <img src="images/icons/Logo.svg" alt="" class="svg Logo">CoraHert
+                </span>
+                <!-- Footer brand description -->
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error sed omnis veniam laboriosam distinctio corrupti.
+                </p>
+                <!-- Footer brand social media links -->
+                <span class="footerSocials">
+                    <a href=""><img src="images/icons/instagram-icon.svg" alt="" class="svg footerSocialIcon"></a>
+                    <a href=""><img src="images/icons/facebook-icon.svg" alt="" class="svg footerSocialIcon"></a>
+                    <a href=""><img src="images/icons/twitter-icon.svg" alt="" class="svg footerSocialIcon"></a>
+                    <a href=""><img src="images/icons/youtube-icon.svg" alt="" class="svg footerSocialIcon"></a>                  
+                </span>
+            </div>
+
+            <!-- Footer Quick Links -->
+            <ul>
+                <!-- Title for the Quick Links -->
+                <li class="footerLinksTitle">
+                    <h2>COMPANY</h2>
+                    <!-- Button to minimize/maximize the quick link, this will be only visible on responsive design -->
+                    <button class="maximizeFooterLinks">
+                        <img src="images/icons/drop-down-arrow.svg" alt="" class="svg">
+                    </button>
+                </li>
+                <!-- Quick Links -->
+                <li class="footerLink"><a href="#">Privacy Policy</a></li>
+                <li class="footerLink"><a href="#">Terms of Use</a></li>
+                <li class="footerLink"><a href="#">Blog</a></li>
+                <li class="footerLink"><a href="#">About Us</a></li>
+            </ul>
+
+            <!-- Footer Quick Links -->
+            <ul>
+                <!-- Title for the Quick Links -->
+                <li class="footerLinksTitle">
+                    <h2>SUPPORT</h2>
+                    <!-- Button to minimize/maximize the quick link, this will be only visible on responsive design -->
+                    <button class="maximizeFooterLinks">
+                        <img src="images/icons/drop-down-arrow.svg" alt="" class="svg">
+                    </button>
+                </li>
+                <!-- Footer Quick Links -->
+                <li class="footerLink"><a href="#">FAQs</a></li>
+                <li class="footerLink"><a href="#">Contact Us</a></li>
+                <li class="footerLink"><a href="#">Help Center</a></li>
+            </ul>
+            <ul>
+                <li class="footerLinksTitle">
+                    <h2>INFO</h2>
+                    <button class="maximizeFooterLinks">
+                        <img src="images/icons/drop-down-arrow.svg" alt="" class="svg">
+                    </button>                </li>
+                <li class="footerLink"><a href="#">Terms and Condition</a></li>
+                <li class="footerLink"><a href="#">Return Policy</a></li>
+            </ul>
+            <ul>
+                <li class="footerLinksTitle">
+                    <h2>CONTACT US</h2>
+                    <button class="maximizeFooterLinks">
+                        <img src="images/icons/drop-down-arrow.svg" alt="" class="svg">
+                    </button>                
+                </li>
+                <li class="footerLink">+234 70-0000-0000</li>
+                <li class="footerLink"><a href="#">direct@email.com</a></li>
+                <li class="footerLink">11. block street, town, state country</li>
+            </ul>
+        </div>
+        <div class="footerBottom">
+            © CoraHert 2025, All Right Reserved
+        </div>
+    </footer>
+    <script src="js/jQueryv3.7.1.js"></script>
+    <script src="js/embed-svg.js"></script>
+    <script src="js/like-icon.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

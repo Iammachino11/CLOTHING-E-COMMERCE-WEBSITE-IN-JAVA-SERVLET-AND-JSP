@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="/images/icons/favicon.ico">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/nav-bar.css">
+    <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+     <!-- navigation menu -->
+     <nav class="navMenu">
+        <!-- Discount ad here -->
+        <span class="navDiscountAd">Sign up and GET A DISCOUNT OFF for your first Order <a href="#">Sign up now</a> 
+            <button id="close-nav-ad">✕</button>
+        </span>
+
+        <!-- Nav bar to display logo, links etc -->
+        <div class="navBar">
+            <!-- Logo container to store the logo -->
+            <div class="logoContainer">
+                <img src="/images/icons/logo-colored.svg" alt="" class="Logo">
+                <h2>CoraHert</h2>
+            </div>
+
+            <!-- navLinks -->
+            <ul>
+                <li><a href="/Index.html"class="navLinks">Home</a></li>
+                <li><a href="/pages/shop.html" class="navLinks">Shop</a></li>
+                <li><a href="" class="navLinks">About Us</a></li>
+            </ul>
+            <!-- Nav Item for CTA buttons and other content like to display user info, cart on login -->
+            <div class="navItems">
+                <a href="" class="joinUsBtn buttonStyle2">Join Us</a>
+                
+            </div>
+            
+        </div>
+        <!-- Nav Product collection, this contains the product collection type like men, women, kids etc -->
+        <div class="navProductCollection">
+            <!-- Ul that contains all the collection -->
+            <ul>
+                <!-- All collection -->
+                <li id="all-collection">
+                    <span>All</span>
+                    <!-- All collection icon This will be visible in responsive view -->
+                    <img src="/images/icons/product-icon.svg" alt="" class="svg">
+                </li>
+                <!-- New Items collection -->
+                <li id="new-items">
+                    <span>NEW ITEMS</span>
+                    <!-- new item collection icon This will be visible in responsive view -->
+                    <img src="/images/icons/new-icon.svg" alt="" class="svg">
+                </li>
+                <!-- Men Collection -->
+                <li id="men">
+                    <span>MEN</span>
+                    <!-- Men collection icon This will be visible in responsive view -->
+                    <img src="/images/icons/male-wear-icon.svg" alt="" class="svg">
+                </li>
+                <!-- Women Collection -->
+                <li id="women">
+                    <span>WOMEN</span>
+                    <!-- Women Collection icon This will be visible in responsive view -->
+                    <img src="/images/icons/female-wear-icon.svg" alt="" class="svg">
+                </li>
+                <!-- Kids Collection -->
+                <li id="kids">
+                    <span>KIDS</span>
+                    <!-- Kids collection icon This will be visible in responsive view -->
+                    <img src="/images/icons/kid-wear-icon.svg" alt="" class="svg">
+                </li>
+            </ul>
+            <!-- Container to house filter and cart button -->
+            <span class="filterAndCartButton">
+                <!-- Filter button -->
+                <button class="filterButton" id="filter-button">
+                    <!-- Filter button icon -->
+                    <img src="/images/icons/filter-icon.svg" alt="" class="svg">
+                    <!-- Filter button text -->
+                    <span class="filterButtonText">Filter</span>
+                </button>
+                <!-- Cart button -->
+                <button class="cartButton" id="cart-button">
+                    <!-- Cart item count -->
+                    <span id="cart-item-count">0</span>
+                    <!-- cart icon -->
+                    <img src="/images/icons/cart-icon.svg" alt="" class="svg">
+                    <!-- cart button text-->
+                    <span class="cartButtonText">Cart</span>
+                </button>
+            </span>
+        </div>
+    </nav>
+    <!-- This element is to fill up the space of the nav because it has a position of fixed....
+     this prevents the shopping ad from pushing upward to the top of the page behind the nav -->
+    <div class="fillupSpace"></div>
+    <!-- Shopping ad -->
+    <section class="shoppingAd" id="shopping-ad">
+        <!-- This is to display the dicount -->
+        <span class="shoppingAdDiscount" id="shopping-ad-discount">
+            <!-- Discout icon -->
+            <img src="/images/icons/discount-icon.svg" alt="" class="svg">
+            Up to 50% OFF Monthly Sales
+        </span>
+        <!-- The is the title of the shopping add -->
+        <h2 class="shoppingAdTitle" id="shopping-ad-title">
+            Step Into Style: Your Ultimate Fashion Destination
+        </h2>
+        <!-- Button to display shop -->
+        <a class="shoppingAdButton buttonStyle1" id="shopping-ad-button"><span>Shop Now</span></a>
+        <!-- Image of the shopping ad -->
+        <img src="/images/assets/banner-img.png" alt="" class="shoppingAdImg" id="shopping-ad-img">
+    </section>
+    <section class="productsSection">
+          <!-- Product Container where all the products are stored -->
+          <div class="productContainer">
+            <!-- individual product -->
+            <div class="product" data-product-id="">
+                <!-- Discount percentage of the product -->
+                <div class="discountPercentage" id="discount-percentage">Save 20%</div>
+                <!-- Container housing the add to cart and wishlist buttons -->
+                <div class="addToCartAndWishlistContainer">
+                    <!-- Add to cart button -->
+                    <button class="addToCartBtn" id="add-to-Cart-btn">
+                        <img src="/images/icons/add-to-cart-icon.svg" alt="" class="svg">
+                    </button>
+                    <!-- Add to wishlist button -->
+                    <button class="addToWishlistBtn" id="add-to-wishlist-btn">
+                        <i class="like-icon-container" data-animation="circle" id="wishlist-icon"></i>
+                    </button>
+                </div>
+
+                <!-- product image -->
+                <img src="/images/temp/image-1.jpg" alt="" class="productImage" id="product-image">
+                <!-- Product info -->
+                <div class="productInfo">
+                    <!-- ProductName/Title -->
+                    <span class="productTitle" id="product-name">Modern Colored Dress</span>
+                    <!-- Items below the product name -->
+                    <div class="productInfoBottom">
+                        <!-- To house the Order count and product rating -->
+                        <div class="productOrderAndRating">
+                            <!-- Product order count -->
+                            <span class="productOrderCount" id="product-order-count">500+ Orders</span>
+                            <!-- Product  Rating -->
+                            <span class="productRating" id="product-rating">
+                                <img src="/images/icons/star-icon.svg" alt="" class="svg starIcon"> 4.9
+                            </span>
+                        </div>
+                        <!-- Product price -->
+                        <div class="productPriceContainer">
+                            <!-- Discount price -->
+                            <div class="discountPrice" id="discount-price"> ₦ 30,000.00 </div>
+                            <!-- current price -->
+                            <div class="productPrice" id="product-price">₦ 24,000.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Individual product -->
+            <div class="product" data-product-id="">
+                <!-- add to cart and wishlist container to house both the add to cart and wishlist button -->
+                <div class="addToCartAndWishlistContainer">
+                    <!-- add to cart button -->
+                    <button class="addToCartBtn">
+                        <img src="/images/icons/add-to-cart-icon.svg" alt="" class="svg">
+                    </button>
+
+                    <button class="addToWishlistBtn" id="add-to-wishlist-btn">
+                        <i class="like-icon-container" data-animation="circle" id="wishlist-icon"></i>
+                    </button>   
+                </div>
+                <img src="/images/temp/image-2.jpg" alt="" class="productImage">
+                <div class="productInfo">
+                    <span class="productTitle" id="product-title">Classy Light Jacket</span>
+                    <div class="productInfoBottom">
+                        <div class="productOrderAndRating">
+                            <span class="productOrderCount" id="product-order-count">300+ Orders</span>
+                            <span class="productRating" id="product-rating">
+                                <img src="/images/icons/star-icon.svg" alt="" class="svg starIcon"> 4.6
+                            </span>
+                        </div>
+                        <div class="productPriceContainer">
+                            <div class="productPrice" id="product-price">₦ 15,000.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- This for the filter menu -->
+    <div class="filterOptionsModal">
+        <div class="filterOptions">
+            <!-- Close button to close the filter menu -->
+            <button class="closeFilterMenu">✕</button>
+            <!-- Filter Header -->
+            <h2>Filter Options</h2>
+            <!-- Filter Categories -->
+            <div class="filterCategories">
+                <!-- Category header -->
+                <h2>Category</h2>
+                <!-- Individual Categories -->
+                <label class="filterCategory">
+                    <input type="checkbox">
+                    <span class="checkmark">
+                    </span>
+                    Jacket
+                </label>
+
+                <!-- Individual Categories -->
+                <label class="filterCategory">
+                    <input type="checkbox">
+                    <span class="checkmark">
+                    </span>
+                    Trousers
+                </label>
+
+                <!-- Individual Categories -->
+                <label class="filterCategory">
+                    <input type="checkbox">
+                    <span class="checkmark">
+                    </span>
+                    Gowns
+                </label>
+
+                <!-- Individual Categories -->
+                <label class="filterCategory">
+                    <input type="checkbox">
+                    <span class="checkmark">
+                    </span>
+                    Shorts
+                </label>
+    
+                <!-- Individual Categories -->
+                <label class="filterCategory">
+                    <input type="checkbox">
+                    <span class="checkmark">
+                    </span>
+                    T-Shirts
+                </label>
+    
+                <!-- Individual Categories -->
+                <label class="filterCategory">
+                    <input type="checkbox">
+                    <span class="checkmark">
+                    </span>
+                    Blazers
+                </label>
+    
+                <!-- Individual Categories -->
+                <label class="filterCategory">
+                    <input type="checkbox">
+                    <span class="checkmark">
+                    </span>
+                    Coats
+                </label>
+            </div>
+            
+            <!-- Filter by price category container -->
+            <div class="priceCategoryContainer">
+                <!-- heading -->
+                <h2>Price</h2>
+                <!-- Form to submit/request price filter -->
+                <form action="" class="priceCategory" id="price-category">
+                    <!-- input for min price input -->
+                    <input type="text" class="minPrice" id="min-price" placeholder="min">
+                    <span>–</span>
+                    <!-- input for max price input -->
+                    <input type="text" class="maxPrice" id="max-price" placeholder="max">
+                    <!-- Submit button to submit price filter -->
+                    <button id="submit-price-category">OK</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail View Here -->
+    <div class="productDetailViewModal" id="product-detail-view-modal">
+        <!-- This is for wrapping it -->
+        <div class="productDetailViewWrapper">
+            <!-- This is to close the modal -->
+            <button id="close-product-detail-view-btn">✕</button>
+             <!-- Product detail view container that contains all the info -->
+            <div class="productDetailView" id="product-detail-view">
+                <!-- Product Detail View Top -->
+                <div class="productDetailViewTop">
+                    <!-- This container contains the images and thumbnails -->
+                    <div class="productDetailViewImgAndThumbWrapper">
+                        <!-- This container is wrapping only the image -->
+                        <div class="productDetailViewImgWrapper">
+                            <!-- Product Image -->
+                            <img src="/images/temp/product-1.jpg" alt="" id="product-detail-view-img">
+                        </div>
+                        <!-- This contains all the thumbnails -->
+                        <div class="productDetailViewThumbnailsContainer">
+                            <!-- This container is for wrapping each individual thumbnail -->
+                            <div class="productDetailViewThumbnailWrapper">
+                                <!-- Product Thumbnail Image -->
+                                <img src="/images/temp/product-1-thumb.jpg" alt="" id="product-detail-view-thumbnail">
+                            </div>
+                            <div class="productDetailViewThumbnailWrapper">
+                                <!-- Product Thumbnail Image -->
+                                <img src="/images/temp/product-1-thumb.jpg" alt="" id="product-detail-view-thumbnail">
+                            </div>
+                            <div class="productDetailViewThumbnailWrapper">
+                                <!-- Product Thumbnail Image -->
+                                <img src="/images/temp/product-1-thumb.jpg" alt="" id="product-detail-view-thumbnail">
+                            </div>
+                            <div class="productDetailViewThumbnailWrapper">
+                                <!-- Product Thumbnail Image -->
+                                <img src="/images/temp/product-1-thumb.jpg" alt="" id="product-detail-view-thumbnail">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- This container contains other details like name, price, rating etc -->
+                    <div class="productDetailViewDetails">
+                        <!-- Product Name -->
+                        <h2 id="product-detail-view-product-name">Orielle Jean in Green</h2>
+                        <!-- Product rating and review wrapper -->
+                        <div class="productDetailViewReviewsWrapper">
+                            <!-- Star rating icon -->
+                            <img src="/images/icons/star-icon.svg" alt="" class="svg starIcon">
+                            <!-- Product rating average count -->
+                            <span id="product-detail-view-rating">4.8</span>
+                            <!-- Prouct Review Count -->
+                            <span id="product-detail-view-review-count">(103 Reviews)</span>
+                        </div>
+                        <!-- Product price wrapper -->
+                        <div class="productDetailViewPriceWrapper">
+                            <!-- Product Price -->
+                            <span id="product-detail-view-price">₦ 24,000.00</span>
+                            <!-- Discount price, this will only be visible if the product has a discount -->
+                            <span id="product-detail-view-price-discount">₦ 30,0000.00</span>
+                            <span id="product-detail-view-percentage-off">20% OFF</span>
+                        </div>
+                        <!-- Product Description -->
+                        <p id="productDetailViewDescription">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, corrupti molestiae praesentium iusto nisi illo excepturi, sunt, in laudantium expedita dicta veritatis facilis aut!.
+                        </p>
+                        <!-- Container to house/wrap the product size -->
+                        <div class="productDetailViewSizeWrapper">
+                            Size: <span id="product-detail-view-size">L</span>
+                        </div>
+                        <!-- To display if product is in stock or not -->
+                        <span id="product-detail-view-stock">In Stock</span>
+                        <!-- Product purchase info -->
+                        <div class="productDetailViewPurchaseInfoWrapper">
+                            <!-- For inputting the amount of quantity -->
+                            <div class="number-input">
+                                <button type="button" aria-label="Decrement" onclick="decrement()">−</button>
+                                <input type="number" value="0" min="0" max="100" id="customNumber">
+                                <button type="button" aria-label="Increment" onclick="increment()">+</button>
+                            </div>
+                            <!-- Add to cart button -->
+                            <button class="buttonStyle1" id="product-detail-view-add-to-cart">
+                                <span>Add to Cart</span>
+                            </button>
+                            <!-- Add to wishilist button -->
+                            <button class="addToWishlistBtn" id="pdv-add-to-wishlist-btn">
+                                <i class="like-icon-container" data-animation="circle" id="pdv-wishlist-icon"></i>
+                            </button>                
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Detail View Bottom -->
+                <div class="productDetailViewBottom">
+                    <!-- Other product info tab to navigate between product info and reviews -->
+                    <ul class="productDetailViewOtherInfoTab">
+                        <!-- More product info -->
+                        <li class="productDetailViewMoreInfoTab" id="product-detail-view-more-info-tab">
+                            MORE INFO
+                        </li>
+                        <!-- Reviews -->
+                        <li class="productDetailViewReviewsTab" id="product-details-view-reviews-tab">
+                            REVIEWS
+                        </li>
+                    </ul>
+                    <!-- Other product info container -->
+                    <div class="productDetailViewOtherInfoWrapper">
+                        <!-- For fabric detail view -->
+                        <div class="productDetailViewFabric">
+                            <h2>Fabric & Material Details</h2>
+                            <!-- List that contains all the fabric and material info -->
+                            <ul>
+                                <li>Fabric Composition: 
+                                    <span class="productDetailViewFabricDetails">100% Cotton</span>
+                                </li>
+                                <li>Care Instructions: 
+                                    <span class="productDetailViewFabricDetails">
+                                        Do Not Bleach
+                                    </span>
+                                    <span class="productDetailViewFabricDetails">
+                                        Machine Wash Cold
+                                    </span>
+                                </li>
+                                <li>Texture and Feel: 
+                                    <span class="productDetailViewFabricDetails">
+                                        Soft and Stretchable
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Product shipping info -->
+                        <div class="productDetailViewShipping">
+                            <h2>Shipping and Return Policies</h2>
+                            <!-- List that contains all the product shipping info -->
+                            <ul>
+                                <li>Delivery Times: 
+                                    <span class="productDetailViewShippingDetails">Within 2 Weeks</span>
+                                </li>
+                                <li>Return Policy: 
+                                    <span class="productDetailViewShippingDetails">Within 3 days of Order</span>
+                                </li>
+                                <li>Shipping Cost: 
+                                    <span class="productDetailViewShippingDetails">
+                                        ₦10,000 - ₦30,000
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product reviews section -->
+                    <div class="productDetailViewReviewsSection">
+                        <!-- Reviews section header -->
+                        <header class="productReviewHeader">
+                            <h2>REVIEWS</h2>
+                            <!-- Button for user to write a review -->
+                            <button class="buttonStyle3" id="write-review"><span>Write a Review</span></button>
+                        </header>
+                        <!-- Rating snapshot which contains the total review count -->
+                        <p>Rating Snapshot (<span class="totalReviewCount">318</span>)</p>
+                        <!-- List to display all the star rating in a progress bar indicator like format -->
+                        <ul class="productDetailViewReviewSnapshot">
+                            <!--  for 5 star rating-->
+                            <li class="starRatingLevel">
+                                5 <img src="/images/icons/star-icon.svg" alt="" class="svg">
+                                <!-- rating level container/progress container -->
+                                <span class="ratingLevelWrapper">
+                                    <!-- Rating level progress bar -->
+                                    <span class="ratingLevel"></span>
+                                </span>
+                                <!-- Rating level count -->
+                                <span class="reviewSnapshotCountPercent">213</span>
+                            </li>
+                            <!--  for 4 star rating-->
+                            <li class="starRatingLevel">
+                                4 <img src="/images/icons/star-icon.svg" alt=""  class="svg">
+                                <!-- rating level container/progress container -->
+                                <span class="ratingLevelWrapper">
+                                    <!-- Rating level progress bar -->
+                                    <span class="ratingLevel"></span>
+                                </span>
+                                <!-- Rating level count -->
+                                <span class="reviewSnapshotCountPercent">40</span>
+                            </li>
+
+                            <!--  for 3 star rating-->
+                            <li class="starRatingLevel">
+                                3 <img src="/images/icons/star-icon.svg" alt=""  class="svg">
+                                <!-- rating level container/progress container -->
+                                <span class="ratingLevelWrapper">
+                                    <!-- Rating level progress bar -->
+                                    <span class="ratingLevel"></span>
+                                </span>
+                                <!-- Rating level count -->
+                                <span class="reviewSnapshotCountPercent">31</span>
+                            </li>
+
+                            <!--  for 2 star rating-->
+                            <li class="starRatingLevel">
+                                2 <img src="/images/icons/star-icon.svg" alt=""  class="svg">
+                                <!-- rating level container/progress container -->
+                                <span class="ratingLevelWrapper">
+                                    <!-- Rating level progress bar -->
+                                    <span class="ratingLevel"></span>
+                                </span>
+                                <!-- Rating level count -->
+                                <span class="reviewSnapshotCountPercent">15</span>
+                            </li>
+                            <!--  for 1 star rating-->
+                            <li class="starRatingLevel">
+                                1 <img src="/images/icons/star-icon.svg" alt=""  class="svg">
+                                <!-- rating level container/progress container -->
+                                <span class="ratingLevelWrapper">
+                                    <!-- Rating level progress bar -->
+                                    <span class="ratingLevel"></span>
+                                </span>
+                                <!-- Rating level count -->
+                                <span class="reviewSnapshotCountPercent">19</span>
+                            </li>
+                        </ul>
+                        <!-- Container to house each customer review rating -->
+                        <ul class="customerReviewContainer">
+                            <!-- Individual review -->
+                            <li class="customerReviewWrapper">
+                                <!-- review header/top -->
+                                <span class="customerReviewHeader">
+                                    <!-- Customer Name -->
+                                    <span class="customeruserName">Amodu Damilola</span>
+                                    <!-- Time period -->
+                                    <span class="customerReviewPeriod"> 11 months ago</span>
+                                </span>
+                                <!-- Customer Review -->
+                                <span class="customerReview">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, enim pariatur repellat possimus quo dolores eius necessitatibus vel ut aspernatur? Reprehenderit temporibus repudiandae architecto voluptatum. Tempora eveniet quisquam quam mollitia! Lorem ipsum dolor sit amet consectetur adipisicing elit. At commodi iusto quaerat est repellendus reprehenderit possimus, ad praesentium aut. Tempore unde obcaecati veniam consequatur sint, quasi deleniti labore accusamus tempora.
+                                </span>
+                                <!-- Review bottom that houses the star rating and the expand button -->
+                                <span class="customerReviewBottom">
+                                    <!-- Star rating wrapper -->
+                                    <span class="starRatingWrapper">
+                                        <!-- Star rating count -->
+                                        <span class="starRatingCount">5</span> 
+                                        <!-- Stars will be added here dynamically and assigned colour based 
+                                         on the number in the starRatingCount -->
+                                    </span>
+                                    <!-- Button to expand the review -->
+                                    <button class="expandCustomerReviewBtn">
+                                        <img src="/images/icons/drop-down-arrow.svg" alt="" class="svg">
+                                    </button>
+                                </span>
+                            </li>
+
+
+                            <li class="customerReviewWrapper">
+                                <span class="customerReviewHeader">
+                                    <span class="customeruserName">John Doe</span>
+                                    <span class="customerReviewPeriod"> 3 week ago</span>
+                                </span>
+                                <span class="customerReview">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi doloremque vero praesentium tenetur! Quas reprehenderit saepe ipsam eum fuga, eos quos placeat ipsum minus, quod necessitatibus quidem. Esse earum harum excepturi quae officia iure laborum officiis nobis nulla dolorum consectetur consequatur beatae fuga ex delectus nostrum, accusantium doloremque! Dolores, voluptates. Molestias consequatur odit adipisci incidunt pariatur veniam quasi, atque numquam!
+                                </span>
+                                <span class="customerReviewBottom">
+                                    <span class="starRatingWrapper">
+                                        <span class="starRatingCount">4</span> 
+                                        <!-- Stars will be added here dynamically and assigned colour based 
+                                         on the number in the starRatingCount -->
+                                    </span>
+                                    <button class="expandCustomerReviewBtn">
+                                        <img src="/images/icons/drop-down-arrow.svg" alt="" class="svg">
+                                    </button>
+                                </span>
+                            </li>
+                            <li class="customerReviewWrapper">
+                                <span class="customerReviewHeader">
+                                    <span class="customeruserName">Jane Doe</span>
+                                    <span class="customerReviewPeriod"> a year ago</span>
+                                </span>
+                                <span class="customerReview">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi doloremque vero praesentium tenetur! Quas reprehenderit saepe ipsam eum fuga, eos quos placeat ipsum minus, quod necessitatibus quidem.
+                                </span>
+                                <span class="customerReviewBottom">
+                                    <span class="starRatingWrapper">
+                                        <span class="starRatingCount">1</span> 
+                                        <!-- Stars will be added here dynamically and assigned colour based 
+                                         on the number in the starRatingCount -->
+                                    </span>
+                                    <button class="expandCustomerReviewBtn">
+                                        <img src="/images/icons/drop-down-arrow.svg" alt="" class="svg">
+                                    </button>
+                                </span>
+                            </li>
+                            <li class="customerReviewWrapper">
+                                <span class="customerReviewHeader">
+                                    <span class="customeruserName">John Doe</span>
+                                    <span class="customerReviewPeriod"> 1 hour ago</span>
+                                </span>
+                                <span class="customerReview">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi doloremque vero praesentium tenetur! Quas reprehenderit saepe ipsam eum fuga, eos quos placeat ipsum minus, quod necessitatibus quidem. Esse earum harum excepturi quae officia iure laborum officiis nobis nulla dolorum consectetur consequatur beatae fuga ex delectus nostrum, accusantium doloremque! Dolores, voluptates. Molestias consequatur odit adipisci incidunt pariatur veniam quasi, atque numquam!
+                                </span>
+                                <span class="customerReviewBottom">
+                                    <span class="starRatingWrapper">
+                                        <span class="starRatingCount">2</span>
+                                        <!-- Stars will be added here dynamically and assigned colour based 
+                                         on the number in the starRatingCount -->
+                                    </span>
+                                    <button class="expandCustomerReviewBtn">
+                                        <img src="/images/icons/drop-down-arrow.svg" alt="" class="svg">
+                                    </button>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+         </div>
+        
+    </div>
+
+
+
+
+        <!-- Footer  -->
+        <footer>
+            <!-- Content at the top section of the footer -->
+            <div class="footerTop">
+                <!-- Footer About brand which contains brand logo, short about, and social media links -->
+                <div class="footerAboutBrand">
+                    <!-- foooter brand logo -->
+                    <span class="footerLogo">
+                        <img src="/images/icons/Logo.svg" alt="" class="svg Logo">CoraHert
+                    </span>
+                    <!-- Footer brand description -->
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error sed omnis veniam laboriosam distinctio corrupti.
+                    </p>
+                    <!-- Footer brand social media links -->
+                    <span class="footerSocials">
+                        <a href=""><img src="/images/icons/instagram-icon.svg" alt="" class="svg footerSocialIcon"></a>
+                        <a href=""><img src="/images/icons/facebook-icon.svg" alt="" class="svg footerSocialIcon"></a>
+                        <a href=""><img src="/images/icons/twitter-icon.svg" alt="" class="svg footerSocialIcon"></a>
+                        <a href=""><img src="/images/icons/youtube-icon.svg" alt="" class="svg footerSocialIcon"></a>                  
+                    </span>
+                </div>
+    
+                <!-- Footer Quick Links -->
+                <ul>
+                    <!-- Title for the Quick Links -->
+                    <li class="footerLinksTitle">
+                        <h2>COMPANY</h2>
+                        <!-- Button to minimize/maximize the quick link, this will be only visible on responsive design -->
+                        <button class="maximizeFooterLinks">
+                            <img src="/images/icons/drop-down-arrow.svg" alt="" class="svg">
+                        </button>
+                    </li>
+                    <!-- Quick Links -->
+                    <li class="footerLink"><a href="#">Privacy Policy</a></li>
+                    <li class="footerLink"><a href="#">Terms of Use</a></li>
+                    <li class="footerLink"><a href="#">Blog</a></li>
+                    <li class="footerLink"><a href="#">About Us</a></li>
+                </ul>
+    
+                <!-- Footer Quick Links -->
+                <ul>
+                    <!-- Title for the Quick Links -->
+                    <li class="footerLinksTitle">
+                        <h2>SUPPORT</h2>
+                        <!-- Button to minimize/maximize the quick link, this will be only visible on responsive design -->
+                        <button class="maximizeFooterLinks">
+                            <img src="/images/icons/drop-down-arrow.svg" alt="" class="svg">
+                        </button>
+                    </li>
+                    <!-- Footer Quick Links -->
+                    <li class="footerLink"><a href="#">FAQs</a></li>
+                    <li class="footerLink"><a href="#">Contact Us</a></li>
+                    <li class="footerLink"><a href="#">Help Center</a></li>
+                </ul>
+                <ul>
+                    <li class="footerLinksTitle">
+                        <h2>INFO</h2>
+                        <button class="maximizeFooterLinks">
+                            <img src="/images/icons/drop-down-arrow.svg" alt="" class="svg">
+                        </button>                </li>
+                    <li class="footerLink"><a href="#">Terms and Condition</a></li>
+                    <li class="footerLink"><a href="#">Return Policy</a></li>
+                </ul>
+                <ul>
+                    <li class="footerLinksTitle">
+                        <h2>CONTACT US</h2>
+                        <button class="maximizeFooterLinks">
+                            <img src="/images/icons/drop-down-arrow.svg" alt="" class="svg">
+                        </button>                
+                    </li>
+                    <li class="footerLink">+234 70-0000-0000</li>
+                    <li class="footerLink"><a href="#">direct@email.com</a></li>
+                    <li class="footerLink">11. block street, town, state country</li>
+                </ul>
+            </div>
+            <div class="footerBottom">
+                © CoraHert 2025, All Right Reserved
+                
+            </div>
+        </footer>
+
+    <script src="/js/jQueryv3.7.1.js"></script>
+    <script src="/js/embed-svg.js"></script>
+    <script src="/js/like-icon.js"></script>
+    <script src="/js/paginator.js"></script>
+    <script src="/js/shop.js"></script>
+
+</body>
+</html>
