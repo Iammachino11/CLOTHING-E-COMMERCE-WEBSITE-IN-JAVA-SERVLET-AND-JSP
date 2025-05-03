@@ -82,7 +82,7 @@ updateNavbarBackground();
     });
 
     function navigateTo(index) {
-        if (index === currentIndex || index < 0 || index >= slides.length) return;
+        if (index === currentIndex || index < 0 || index >= slides.length) return;        
         
         clearInterval(interval);
         animateTransition(index);

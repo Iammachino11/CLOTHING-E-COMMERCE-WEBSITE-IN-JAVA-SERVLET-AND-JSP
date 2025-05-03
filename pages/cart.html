@@ -21,7 +21,7 @@
                     <!-- This is the table header (the title) -->
                     <tr>
                         <th>
-                            <button id="empty-cart-button" class="removeProductBtn">✕</button>
+                            <button id="empty-cart-button" class="emptyCartButton">✕</button>
                         </th>
                         <th>PRODUCT</th>
                         <th>PRICE</th>
@@ -30,6 +30,45 @@
                     </tr>
     
                     <!-- While these are the contents these will be added dynamically-->
+                    <tr class="productWrapper">
+                        <td>
+                            <button class="removeProductBtn">✕</button>
+                        </td>
+                        <td>
+                            <div class="cartProductInfo">
+                                <div class="cartProductImageWrapper">
+                                    <img src="/images/temp/product-1.jpg" alt="" class="cartProductImage">
+                                </div>
+                                <div class="cartProductDetails">
+                                    <span class="ProductName">Orielle Jean in Green</span>
+                                    <span class="productSizeAndStockWrapper">
+                                        <span class="productSizeWrapper">
+                                            Size:
+                                            <span class="ProductSize">L</span>
+                                        </span>
+                                        <span class="productStockState">In Stock</span>
+                                    </span> 
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="itemCost">₦ 72,000.00</span></td>
+                        <td>
+                            <div class="number-input">
+                                <button type="button" aria-label="Decrement" onclick="decrement()">−</button>
+                                <input type="number" value="0" min="0" max="100" id="customNumber">
+                                <button type="button" aria-label="Increment" onclick="increment()">+</button>
+                            </div>
+                        </td>
+                        <td>
+                            <label class="selectBox">
+                                <input type="checkbox" class="selectProduct">
+                                <span class="checkmark">
+                                </span>
+                            </label>
+                            <span class="subTotal">₦ 72,000.00</span>
+                        </td>
+
+                    </tr>
                     <tr class="productWrapper">
                         <td>
                             <button class="removeProductBtn" class="removeProductBtn">✕</button>
@@ -61,7 +100,7 @@
                         </td>
                         <td>
                             <label class="selectBox">
-                                <input type="checkbox">
+                                <input type="checkbox" class="selectProduct">
                                 <span class="checkmark">
                                 </span>
                             </label>
@@ -71,7 +110,136 @@
                     </tr>
                 </table>
             </div>
+            <form action="" class="orderInfoWrapper">
+                <h2 class="orderInfoHeader">Order Summary</h2>
+                <span class="orderInfo">Item <span class="orderCount">1</span></span>
+                <span class="orderInfo">Sub Total <span class="orderProductSubTotal"> ₦ 72,000.00</span></span>
+                <span class="orderInfo">Shipping Fee <span class="orderShippingFee"> ₦ 15,000.00</span></span>
+                <span id="add-coupon-code">Add Coupon Code</span>
+                <div class="couponCodeContainer">
+                    <input type="text" placeholder="Coupon Code">
+                    <button>Apply</button>
+                </div>
+                <span class="orderInfo">Total <span class="totalPrice"> ₦ 87,000.00</span></span>
+                <button class="buttonStyle3">
+                    CHECKOUT
+                </button>
+            </form>
         </div>
+        <!-- ===================== RESPONSIVE CART =========================== -->
+         <div class="responsive cartProductInfoContainer">
+            <button id="resp-empty-cart-button" class="responsive emptyCartButton">
+                ✕ Empty Cart
+            </button>
+            <div class="responsive productWrapper">
+                    <div class="responsive cartProductImageWrapper">
+                        <img src="/images/temp/product-1.jpg" alt="" class="cartProductImage">
+                    </div>
+                    <div class="responsive cartProductDetails">
+                        <span class="responsive ProductName">Orielle Jean in Green</span>
+                        <span class="responsive productSizeAndStockWrapper">
+                            <span class="responsive productSizeWrapper">
+                                Size:
+                                <span class="responsive ProductSize">L</span>
+                            </span>
+                            <span class="responsive productStockState">In Stock</span>
+                        </span>
+                        <span class="responsive orderInfo">Item Cost:
+                            <span class="itemCost">₦ 72,000.00</span>
+                        </span>
+
+                        <span class="responsive orderInfo">SubTotal: 
+                            <span class="subTotal"> ₦ 72,000.00</span>
+                        </span>
+
+                        <span class="responsive orderInfo">Shipping Fee: 
+                            <span class="orderShippingFee"> ₦ 15,000.00</span>
+                        </span>
+                        <div class="responsive itemCountAndPriceWrapper">
+                            <div class="responsive number-input">
+                                <button type="button" aria-label="Decrement" onclick="decrement()">−</button>
+                                <input type="number" value="0" min="0" max="100" id="customNumber">
+                                <button type="button" aria-label="Increment" onclick="increment()">+</button>
+                            </div>
+                            <span class="ProductTotalPrice"> ₦ 87, 000.00</span>
+                        </div>
+                    <button class="buttonStyle3">Proceed to checkout</button>
+                </div>
+                <button class="removeProductBtn">
+                    <img src="/images/icons/delete-icon.svg" alt="" class="svg">
+                </button>
+            </div>
+         </div>
+        
     </section>
+    <script src="/js/jQueryv3.7.1.js"></script>
+    <script src="/js/embed-svg.js"></script>
+    <script>
+        const input = document.getElementById('customNumber');
+
+        function increment() {
+            input.stepUp();
+            validateInput();
+        }
+
+        function decrement() {
+            input.stepDown();
+            validateInput();
+        }
+
+        function validateInput() {
+            const value = parseInt(input.value);
+            const min = parseInt(input.min);
+            const max = parseInt(input.max);
+
+            if (value < min) input.value = min;
+            if (value > max) input.value = max;
+        }
+
+        // Optional: Validate input when user types manually
+        input.addEventListener('input', validateInput);
+        $(document).ready(function(){
+            $('#add-coupon-code').on('click',()=>{
+                $('.couponCodeContainer').toggleClass('expand');
+            });
+            $(function(){
+                // helper to show/hide the summary and update the item count
+                function refreshOrderSummary() {
+                const $checked = $('.selectProduct:checked');
+                const count = $checked.length;
+
+                // show/hide the entire form
+                $('.orderInfoWrapper').toggleClass('visible',count > 0);
+
+                // update the “Item” count
+                $('.orderCount').text(count);
+                let subtotal = 0;
+                $checked.each(function(){
+                  const row = $(this).closest('.productWrapper');
+                  // e.g. grab the PRICE column, parse out the number...
+                  const priceText = row.find('td').eq(2).text().replace(/[₦,\s]/g,'');
+                  const qty     = +row.find('input[type=number]').val() || 1;
+                  subtotal += parseFloat(priceText) * qty;
+                });
+                $('.orderProductSubTotal').text('₦ ' + subtotal.toLocaleString());
+
+                }
+
+                // when a product’s checkbox changes…
+                $('.inboxTable').on('change', '.selectProduct', function(){
+                // toggle grey background
+                $(this)
+                    .closest('.productWrapper')
+                    .toggleClass('selected', this.checked);
+
+                // then refresh the order form
+                refreshOrderSummary();
+                });
+
+                // on page load, make sure the form is in the right state
+                refreshOrderSummary();
+            });
+        });
+    </script>
 </body>
 </html>

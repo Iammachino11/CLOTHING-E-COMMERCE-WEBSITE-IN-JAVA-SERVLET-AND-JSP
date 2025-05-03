@@ -10,6 +10,7 @@
     justify-content: space-between;
     gap: 20px;
     font-family: 'Montserrat',sans-serif;
+    height: 60px;
 }
 .cartHeader h2{
     display: flex;
@@ -23,8 +24,12 @@
 
 .cartProductInfoContainer{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
+    min-height: 80vh;
+}
+.responsive.cartProductInfoContainer{
+    display: none;
 }
 
 /* Container to house the table */
@@ -42,7 +47,7 @@ table{
     display: inline-table;
     border-spacing: 0px 10px;
     border-collapse: separate; /* This is what separates the table rows*/
-    padding: 20px;
+    padding: 0 20px;
     min-width: 500px; /* Table scroll bar will appear at this size*/
     width: 100%;
 }
@@ -53,8 +58,11 @@ tr{
 }
 tr.productWrapper{
     background-color: var(--bg-alt);
-    border: 2px solid var(--black);
+    transition: background-color 0.2s ease;
 }
+.productWrapper.selected {
+    background-color: var(--bg-muted); /* light grey */
+  }
 /* Th and td styling */
 th, td{
     border-spacing: 20px;
@@ -123,7 +131,8 @@ td:last-child::before{
     padding: 6px 10px;
     background-color: transparent;
 }
-.removeProductBtn#empty-cart-button{
+.emptyCartButton{
+    padding: 6px 10px;
     background-color: var(--error-color);
     color: var(--white);
 }
@@ -261,4 +270,319 @@ td:last-child::before{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.orderInfoWrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 0px;
+    background-color: var(--bg-alt);
+    padding: 0px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+.orderInfoWrapper.visible{
+    padding: 20px;
+    width: 320px;
+}
+
+.orderInfoHeader {
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 0.1rem solid var(--dark-gray);
+    padding: 15px 0;
+    margin-bottom: 10px;
+    min-width: max-content;
+}
+
+.orderInfo{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: space-between;
+    color: var(--neutral-black);
+    padding: 2px 5px;
+    min-width: max-content;
+}
+
+.orderInfo span{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-grow: 1;
+    color: var(--black);
+}
+
+.orderInfo span::before{
+    content: '';
+    min-width: 10px;
+    flex-grow: 1;
+    border-bottom: 0.1rem dotted var(--dark-gray);
+}
+
+.buttonStyle3{
+    height: 40px;
+    border-radius: 6px;
+    min-width: max-content;
+}
+
+#add-coupon-code{
+    cursor: pointer;
+    min-width: max-content;
+}
+
+.couponCodeContainer{
+    display: flex;
+    visibility: hidden;
+    gap: 10px;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+.couponCodeContainer.expand{
+    visibility: visible;
+    height: 30px;
+}
+
+.couponCodeContainer input{
+    flex-grow: 1;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+    .orderInfoWrapper{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 20px;
+        width: 320px;
+        transform: translateX(150%);
+        box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.293);
+    }
+    .orderInfoWrapper.visible{
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 950px) {
+    .cartProductInfoContainer{
+        display: none;
+    }
+    .responsive.cartProductInfoContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        min-height: 10vh;
+        width: 100%;
+    }
+    .responsive.productWrapper{
+        position: relative;
+        display: flex;
+        gap: 20px;
+        background-color: var(--bg-alt);
+        max-width: 100vw;
+        width: 100%;
+        height: max-content;
+        padding: 20px;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 10px;
+    }
+
+    .responsive.emptyCartButton{
+        color: var(--error-color);
+        background-color: transparent;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+    }
+    .responsive .cartProductImageWrapper{
+        position: relative;
+        height: 260px;
+        width: 220px;
+        border-radius: 10px;
+    }
+    .responsive .cartProductImageWrapper img{
+        width: initial;
+        height: calc(100%*1);
+    }
+
+
+    .responsive .removeProductBtn{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 45px;
+        color: var(--error-color) ;
+        background-color: var(--bg-muted);
+        overflow: hidden;
+        border-radius: 5px;
+    }
+    .responsive .removeProductBtn:active{
+        background-color: var(--error-color) ;
+        color: var(--bg-muted);
+    }
+
+    .responsive.removeProductBtn .svg{
+        width: 100%;
+    }
+    
+    .responsive .cartProductDetails{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-self: initial;
+        gap: 5px;
+    }
+    
+    .responsive.ProductName{
+        text-align: left;
+        word-wrap: break-word;
+    }
+    
+    .responsive.productSizeAndStockWrapper{
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        margin-top: 10px;
+    }
+    
+    .responsive.productSizeWrapper{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .responsive.ProductSize{
+        background-color: var(--bg-primary);
+        padding: 0 8px;
+        font-weight: bold;
+    }
+    
+    .responsive.productStockState{
+        color: var(--success-color-2);
+        margin-right: 10px;
+    }
+
+    .responsive.orderInfo{
+        gap: 5px;
+        padding: 0;
+    }
+    .responsive.orderInfo span:before{
+        content: none;
+    }
+    .responsive.number-input{
+        margin-top: 15px;
+    }
+    .responsive.number-input button, .responsive.number-input input{
+        height: 40px;
+        border: none;
+    }
+    .responsive.number-input button{
+        width: 40px;
+        font-size: 20px;
+        background-color: transparent;
+        border-radius: 6px;
+        border: 0.1rem solid var(--neutral-black);
+
+    }
+    .responsive.number-input input{
+        width: 50px;
+        font-size: 18px;
+        background-color: transparent;
+    }
+    
+    .orderInfoWrapper{
+        display: none;
+    }
+
+    .responsive.itemCountAndPriceWrapper{
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .ProductTotalPrice{
+        font-size: 22px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .cartHeader h2{
+        font-size: 16px;
+        font-family: 'Poppins';
+        font-weight: normal;
+    }
+    .responsive.cartProductInfoContainer{
+        gap: 20px;
+    }
+    .responsive.productWrapper{
+        flex-direction: row-reverse;
+        gap: 10px;
+        border-radius: 6px;
+    }
+
+    .responsive.emptyCartButton{
+        color: var(--error-color);
+        background-color: transparent;
+    }
+    .responsive .cartProductImageWrapper{
+        height: 160px;
+        width: 140px;
+        border-radius: inherit;
+    }
+
+    .responsive .removeProductBtn{
+        top: initial;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .responsive.productSizeAndStockWrapper{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .responsive.orderInfo{
+        font-size: 14px;
+    }
+
+    .responsive.number-input{
+        margin-top: 10px;
+    }
+    .responsive.number-input button, .responsive.number-input input{
+        height: 30px;
+        border: none;
+    }
+    .responsive.number-input button{
+        width: 30px;
+        font-size: 16px;
+        border: 0.1rem solid var(--neutral-black);
+    }
+    .responsive.number-input input{
+        width: 40px;
+        font-size: 16px;
+    }
+
+    .responsive.itemCountAndPriceWrapper{
+        gap: 10px;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .ProductTotalPrice{
+        font-size: 18px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+    }
 }

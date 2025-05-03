@@ -186,6 +186,77 @@ $(document).ready(function(){
       }, 200);
     });
 
+    $(function() {
+      // Cache selectors
+      const $form       = $('.searchBarWrapper');
+      const $formSearchBar  = $form.find('.searchBar');
+      const $formButton     = $('#search-products-btn');
+      const $input      = $form.find('.searchInput');
+      const $suggestions= $form.find('.searchSuggestions');
+    
+      let collapseTimer = null;
+    
+      // Function to expand
+      function expand() {
+        $form.addClass('expanded');
+        $formSearchBar.addClass('expanded');
+        $formButton.addClass('expanded');
+        $suggestions.addClass('expanded');
+      }
+    
+      // Function to collapse
+      function collapse() {
+        // only collapse if input is empty
+        if ($.trim($input.val()) === '') {
+          $form.removeClass('expanded');
+          $formSearchBar.removeClass('expanded');
+          $formButton.removeClass('expanded');
+          $suggestions.removeClass('expanded');
+        }
+      }
+    
+      // Start or reset the auto-collapse timer
+      function resetTimer() {
+        clearTimeout(collapseTimer);
+        collapseTimer = setTimeout(collapse, 4000);
+      }
+    
+      // On button click: prevent submission if empty, otherwise let it submit
+      $form.on('submit', function(e) {
+        if ($.trim($input.val()) === '') {
+          e.preventDefault();   // stop form submission
+          expand();
+          resetTimer();
+        }
+        // else: non-empty, will submit normally
+      });
+    
+      // Also expand on button mousedown (so as to achieve instant expand before form submits)
+      $formButton.on('mousedown', function() {
+        expand();
+        resetTimer();
+      });
+    
+      // Keep it open while typing
+      $input.on('input', function() {
+        if ($.trim($(this).val()) !== '') {
+          // user has typed something: keep expanded and clear any collapse timer
+          clearTimeout(collapseTimer);
+        } else {
+          // input emptied: restart collapse timer
+          resetTimer();
+        }
+      });
+    
+      // Optionally, collapse if click outside
+      $(document).on('click', function(e) {
+        if (!$.contains($form[0], e.target) && $.trim($input.val()) === '') {
+          collapse();
+        }
+      });
+    });
+    
+
     $('.maximizeFooterLinks').on('click', function() {
       // Get the specific ul parent of clicked button
       const $parentList = $(this).closest('ul');
@@ -205,8 +276,8 @@ $(document).ready(function(){
   $('.product').on('click', function(e) {
     // Only trigger if the click didn't come from addToCartBtn/addToWishlistBtn
     if (!$(e.target).closest('.addToCartBtn, .addToWishlistBtn').length) {
+      $('.productDetailViewModal').fadeIn(300);
       $('.productDetailViewModal').css('display','flex');
-        $('.productDetailViewModal').fadeIn(300);
 
     }
 });

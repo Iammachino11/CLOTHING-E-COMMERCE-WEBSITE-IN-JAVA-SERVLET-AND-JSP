@@ -93,6 +93,35 @@
                 </button>
             </span>
         </div>
+        <!-- Search bar form -->
+        <form action="" class="searchBarWrapper">
+            <!-- Search Bar container where the search input and search button is -->
+            <div class="searchBar">
+                <!-- Search Input -->
+                <input type="text" class="searchInput" placeholder="Search Products">
+                <!-- Search Button -->
+                <button id="search-products-btn">
+                    <img src="/images/icons/search-icon.svg" alt="" class="svg">
+                </button>
+            </div>
+            <!-- For suggested searches -->
+            <ul class="searchSuggestions">
+                <!-- This is for it searching -->
+                <li class="searchingProduct">
+                    <img src="/images/icons/circular-loading-2.svg" alt="" class="svg icon">
+                    Searching...
+                </li>
+                <!-- This is if product is not found -->
+                <li class="searchProductNotFound">
+                    <img src="/images/icons/warning-icon.svg" alt="" class="svg icon">
+                    No Product Found
+                </li>
+                <!-- This are suggested searches which will later be replace when the user start searching by search results -->
+                <li>Winter Jacket</li>
+                <li>Crotched Sweater</li>
+                <li>Jorgen Jeans</li>
+            </ul>
+        </form>
     </nav>
     <!-- This element is to fill up the space of the nav because it has a position of fixed....
      this prevents the shopping ad from pushing upward to the top of the page behind the nav -->

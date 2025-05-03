@@ -140,6 +140,7 @@ and occupy same space because they are in the same container */
     align-items: center;
     padding: 10px 30px;
     height: 50px;
+    cursor: pointer;
 }
 
 /* product categories li styling */
@@ -170,6 +171,147 @@ and occupy same space because they are in the same container */
 .navProductCollection ul li:hover{
     background-color: var(--bg-light);
 }
+
+.searchBarWrapper{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 650px;
+    width: 80px;
+    gap: 15px;
+    top: 95%;
+    right: 10px;
+    z-index: 1;
+    padding: 10px;
+    overflow: hidden;
+    /* background-color: aqua; */
+    transition: 0.5s ease;
+}
+.searchBarWrapper.expanded{
+    width: 650px;
+}
+
+.searchBar{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0 10px;
+    height: 60px;
+    width: 100%;
+    background-color: #00000000;
+    gap: 20px;
+    border-radius: 100px;
+    box-shadow: 1px 1px 5px rgba(69, 69, 69, 0.0);
+    transition: inherit;
+}
+
+.searchBar.expanded{
+    padding: 10px;
+    background-color: var(--bg-alt);
+    box-shadow: 1px 1px 5px rgba(69, 69, 69, 0.3);
+}
+
+.searchInput{
+    padding: 0 20px;
+    flex-grow: 1;
+    border-radius: inherit;
+    background-color: transparent;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    min-width: 300px;
+}
+
+button#search-products-btn{
+    min-width: 40px;
+    min-height: 40px;
+    width: 40px;
+    padding: 10px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--black);
+    color: var(--white);
+    box-shadow: 1px 1px 5px rgba(69, 69, 69, 0.3);
+}
+
+button#search-products-btn.expanded{
+    box-shadow: 1px 1px 5px rgba(69, 69, 69, 0.0);
+}
+
+#search-products-btn .svg{
+    width: 100%;
+}
+
+.searchSuggestions{
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    justify-content: right;
+    gap: 8px;
+    padding: 6px 20px;
+    font-size: 15px;
+    border-radius: 100px;
+    min-width: max-content;
+    width: max-content;
+    background-color: var(--bg-alt);
+    box-shadow: 1px 1px 5px rgba(69, 69, 69, 0.2);
+    transition: inherit;
+    transform: translateX(100%);
+    opacity: 0;
+}
+.searchSuggestions.suggestedResults{
+    align-items: center;
+    max-height: 300px;
+    padding: 0;
+    background-color: rgba(184, 184, 184, 0.435);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    border-radius: 10px;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.searchSuggestions.expanded{
+    transform: translateX(0);
+    opacity: 1; 
+}
+li.searchingProduct, li.searchProductNotFound {
+    cursor: not-allowed;
+    pointer-events: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.searchingProduct .icon{
+    width: 25px;
+}
+.searchProductNotFound .icon{
+    width: 18px;
+}
+
+.searchSuggestions li{
+    color: var(--dark-gray);
+    cursor: pointer;
+    padding: 0;
+}
+
+.searchSuggestions.suggestedResults li{
+    padding: 10px 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.searchSuggestions li:hover{
+    background-color: initial;
+    color: var(--black);
+}
+
+.searchSuggestions.suggestedResults li:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--black);
+}
+
 
 /* Filter and cart button container */
 .filterAndCartButton{
@@ -1080,6 +1222,47 @@ description and social media links */
     .navProductCollection ul{
         display: flex;
 
+    }
+
+    .searchBarWrapper{
+        max-width: 100vw;
+    }
+    .searchBarWrapper.expanded{
+        width: 98vw;
+    }
+    
+    .searchInput{
+        min-width: 200px;
+    }
+    
+    
+    .searchSuggestions{
+        align-items: center;
+        font-size: 12px;
+        height: 40px;
+        width: max-content;
+    }
+    .searchSuggestions.suggestedResults{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: max-content;
+    }
+
+    .searchSuggestions.expanded{
+        transform: translateX(0);
+        opacity: 1; 
+    }
+    
+    .searchSuggestions li{
+        color: var(--dark-gray);
+        cursor: pointer;
+        padding: 0 !important;
+    }
+    
+    .searchSuggestions li:hover{
+        background-color: initial;
+        color: var(--black);
     }
 
     .navProductCollection ul li,
